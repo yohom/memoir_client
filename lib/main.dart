@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:memoir/ui/screen/home.screen.dart';
+import 'package:memoir/app/ui/screen/home.screen.dart';
 
 void main() => runApp(MemoirApp());
 
