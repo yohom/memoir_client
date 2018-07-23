@@ -24,6 +24,7 @@ dependencies:
   flutter_wechat: ^0.1.5
   dio: ^0.1.5
   fluttertoast: ^2.0.6
+  flushbar: ^0.7.1
 
 dev_dependencies:
   flutter_test:
