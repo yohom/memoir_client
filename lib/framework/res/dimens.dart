@@ -21,6 +21,12 @@ const text_normal = 16.0;
 const text_big = 18.0;
 //endregion
 
+//region elevation
+const elevation_small = 2.0;
+const elevation_normal = 4.0;
+const elevation_big = 8.0;
+//endregion
+
 double onePixel(BuildContext context) {
   return 1 / MediaQuery.of(context).devicePixelRatio;
 }

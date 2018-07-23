@@ -7,17 +7,19 @@ import 'package:memoir/framework/framework.dart';
 ///
 class StoryCard extends StatelessWidget {
   final Story story;
+  final double elevation;
 
   StoryCard({
     Key key,
     @required this.story,
+    @required this.elevation,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Card(
       color: Colors.pinkAccent,
-      elevation: 8.0,
+      elevation: elevation,
       margin: EdgeInsets.only(bottom: space_huge, right: space_normal),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.0)),
       child: Stack(

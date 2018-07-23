@@ -50,7 +50,10 @@ class _StoryListState extends State<_StoryPageView> {
           duration: Duration(milliseconds: 500),
           curve: Curves.fastOutSlowIn,
           padding: EdgeInsets.all(_currentPage == index ? 0.0 : space_big),
-          child: StoryCard(story: widget.storyList[index - 1]),
+          child: StoryCard(
+            story: widget.storyList[index - 1],
+            elevation: _currentPage == index ? elevation_big : elevation_normal,
+          ),
         );
       },
     );
