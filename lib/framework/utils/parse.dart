@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
-import 'package:memoir/framework/framework.dart';
+import 'package:memoir/framework/utils.dart';
 
 ///
 /// 响应中反序列化json

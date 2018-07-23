@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:memoir/app/bloc/bloc.dart';
 import 'package:memoir/app/ui/screen/home/home.screen.dart';
-import 'package:memoir/framework/framework.dart';
+import 'package:memoir/framework/res.dart';
+import 'package:memoir/framework/ui.dart';
 
 void main() => runApp(MemoirApp());
 

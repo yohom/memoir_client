@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:memoir/framework/framework.dart';
+import 'package:memoir/framework/res.dart';
 
 ///
 /// Page的第一页

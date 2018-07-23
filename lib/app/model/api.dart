@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:dio/dio.dart';
 import 'package:memoir/app/constants.dart';
 import 'package:memoir/app/model/bean/story.dart';
-import 'package:memoir/framework/framework.dart';
+import 'package:memoir/framework/utils.dart';
 import 'package:memoir/framework/utils/parse.dart';
 
 final dio = Dio()

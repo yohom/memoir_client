@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:memoir/app/model/bean/story.dart';
 import 'package:memoir/app/ui/screen/stories/index.widget.dart';
 import 'package:memoir/app/ui/screen/stories/story_card.widget.dart';
-import 'package:memoir/framework/framework.dart';
+import 'package:memoir/framework/res.dart';
+import 'package:memoir/framework/ui.dart';
 
 class Stories extends StatelessWidget {
   @override
