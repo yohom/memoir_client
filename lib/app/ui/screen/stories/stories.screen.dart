@@ -19,6 +19,7 @@ class StoriesScreen extends StatelessWidget {
 
 class Stories extends StatelessWidget {
   final _controller = PageController(viewportFraction: 0.8);
+
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -64,7 +65,17 @@ class Story extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Colors.red,
+      color: Colors.pinkAccent,
+      elevation: 8.0,
+      margin: EdgeInsets.only(bottom: space_huge, right: space_normal),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.0)),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Icon(Icons.add, color: Colors.white, size: 100.0),
+          Text('撰写史料', style: TextStyle(color: Colors.white)),
+        ],
+      ),
     );
   }
 }
