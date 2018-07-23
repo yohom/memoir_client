@@ -1,15 +1,14 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
-import 'package:memoir/framework/ui/error.widget.dart' as error;
 import 'package:memoir/framework/ui/empty.widget.dart';
+import 'package:memoir/framework/ui/error.widget.dart' as error;
 import 'package:memoir/framework/ui/loading.widget.dart';
 import 'package:meta/meta.dart';
+import 'package:rxdart/rxdart.dart';
 
 typedef Widget StreamWidgetBuilder<DATA>(DATA data);
 
 class StreamWidget<T> extends StatelessWidget {
-  final Stream<T> stream;
+  final Observable<T> stream;
   final StreamWidgetBuilder<T> builder;
 
   ///

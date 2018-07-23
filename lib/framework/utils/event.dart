@@ -7,7 +7,7 @@ typedef bool Equal<T>(T data1, T data2);
 
 class Event<T> {
   T latest;
-  Stream<T> stream;
+  Observable<T> stream;
   Equal test;
   bool isDistinct;
   T seedValue;
@@ -79,7 +79,7 @@ class Event<T> {
   }
 
   Observable<T> addStream(Stream<T> source, {bool cancelOnError: true}) {
-    return Observable(
+    return Observable<T>(
       _subject..addStream(source, cancelOnError: cancelOnError),
     );
   }
