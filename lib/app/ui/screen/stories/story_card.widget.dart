@@ -39,3 +39,34 @@ class StoryCard extends StatelessWidget {
     );
   }
 }
+
+class NewStoryCard extends StatelessWidget {
+  final double elevation;
+
+  NewStoryCard({
+    @required this.elevation,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      color: Colors.pinkAccent,
+      elevation: elevation,
+      margin: EdgeInsets.only(bottom: space_huge, right: space_normal),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.0)),
+      child: Stack(
+        alignment: AlignmentDirectional.center,
+        children: <Widget>[
+          Container(color: Colors.pinkAccent),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Icon(Icons.add, color: Colors.white, size: 100.0),
+              Text('撰写史料', style: TextStyle(color: Colors.white)),
+            ],
+          )
+        ],
+      ),
+    );
+  }
+}

@@ -44,15 +44,25 @@ class _StoryListState extends State<_StoryPageView> {
       onPageChanged: (page) {
         setState(() => _currentPage = page);
       },
-      itemCount: widget.storyList.length + 1,
+      itemCount: widget.storyList.length + 2,
       itemBuilder: (context, index) {
         if (index == 0) return Index();
+        if (index == 1)
+          return AnimatedPadding(
+            duration: Duration(milliseconds: 500),
+            curve: Curves.fastOutSlowIn,
+            padding: EdgeInsets.all(_currentPage == index ? 0.0 : space_big),
+            child: NewStoryCard(
+              elevation:
+                  _currentPage == index ? elevation_big : elevation_normal,
+            ),
+          );
         return AnimatedPadding(
           duration: Duration(milliseconds: 500),
           curve: Curves.fastOutSlowIn,
           padding: EdgeInsets.all(_currentPage == index ? 0.0 : space_big),
           child: StoryCard(
-            story: widget.storyList[index - 1],
+            story: widget.storyList[index - 2],
             elevation: _currentPage == index ? elevation_big : elevation_normal,
           ),
         );
