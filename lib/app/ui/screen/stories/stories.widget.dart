@@ -68,21 +68,23 @@ class _StoryListState extends State<_StoryPageView> {
           stream: bloc.pageChange.stream.where((change) {
             return !change.triggeredByBack;
           }),
-          initData: PageChange(1),
-          builder: (page) {
+          initData: PageChange(0),
+          builder: (change) {
             return AnimatedPadding(
               duration: Duration(milliseconds: 500),
               curve: Curves.fastOutSlowIn,
-              padding: EdgeInsets.all(page.page == index ? 0.0 : space_big),
+              padding: EdgeInsets.all(change.page == index ? 0.0 : space_big),
               child: index == 1
                   ? NewStoryCard(
-                      elevation:
-                          page.page == index ? elevation_big : elevation_normal,
+                      elevation: change.page == index
+                          ? elevation_big
+                          : elevation_normal,
                     )
                   : HistoryStoryCard(
                       story: widget.storyList[index - 2],
-                      elevation:
-                          page.page == index ? elevation_big : elevation_normal,
+                      elevation: change.page == index
+                          ? elevation_big
+                          : elevation_normal,
                     ),
             );
           },

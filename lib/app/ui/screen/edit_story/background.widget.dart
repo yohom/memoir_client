@@ -14,7 +14,13 @@ class Background extends StatelessWidget {
     return Hero(
       tag: NEW_STORY_CARD_TO_EDIT_STORY,
       child: Container(
-        color: Colors.pinkAccent,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [Color(0xfff97087), Color(0xfff36aa0)],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ),
+        ),
       ),
     );
   }

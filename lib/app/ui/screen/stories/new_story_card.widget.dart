@@ -20,14 +20,23 @@ class NewStoryCard extends StatelessWidget {
         color: Colors.pinkAccent,
         elevation: elevation,
         margin: EdgeInsets.only(bottom: space_huge, right: space_normal),
-        shape:
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.0)),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16.0),
+        ),
         child: Stack(
           alignment: AlignmentDirectional.center,
           children: <Widget>[
             Hero(
               tag: NEW_STORY_CARD_TO_EDIT_STORY,
-              child: Container(color: Colors.pinkAccent),
+              child: Container(
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [Color(0xfff97087), Color(0xfff36aa0)],
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                  ),
+                ),
+              ),
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
