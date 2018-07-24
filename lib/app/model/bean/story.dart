@@ -1,3 +1,5 @@
+import 'package:memoir/framework/utils/misc.dart';
+
 class Story {
   int id;
   String title;
@@ -5,6 +7,13 @@ class Story {
   String storyImage;
   String storyDate;
   String hero;
+
+  List<String> get formatStoryDate {
+    final spiltDate = storyDate.split('-');
+    final numberedMonth = spiltDate[1];
+    final namedMonth = numberMonth2NamedMonth(numberedMonth);
+    return List()..add(spiltDate[2])..add(namedMonth)..add(spiltDate[0]);
+  }
 
   Story({
     this.id,
