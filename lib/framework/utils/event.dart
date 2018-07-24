@@ -117,6 +117,10 @@ class Event<T> {
     return _subject.map(convert);
   }
 
+  Observable<T> where(bool test(T event)) {
+    return _subject.where(test);
+  }
+
   void clear() {
     latest = seedValue;
     _subject.add(seedValue);

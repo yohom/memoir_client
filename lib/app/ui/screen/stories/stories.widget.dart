@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:memoir/app/model/bean/page_change.dart';
 import 'package:memoir/app/model/bean/story.dart';
 import 'package:memoir/app/ui/screen/stories/index.widget.dart';
 import 'package:memoir/app/ui/screen/stories/story_card/history_story_card.widget.dart';
@@ -25,6 +26,9 @@ class Stories extends StatelessWidget {
   }
 }
 
+///
+/// Stories的具体实现
+///
 class _StoryPageView extends StatefulWidget {
   final List<Story> storyList;
 
@@ -36,32 +40,51 @@ class _StoryPageView extends StatefulWidget {
 
 class _StoryListState extends State<_StoryPageView> {
   final _controller = PageController(viewportFraction: 0.8);
-  int _currentPage = 1;
 
   @override
   Widget build(BuildContext context) {
+    final bloc = BlocProvider.of(context).storyBloc;
+
+    // 如果是手动按了返回按钮, 让PageView滚回第一页
+    bloc.pageChange
+        .where((pageChange) => pageChange.triggeredByBack)
+        .listen((pageChange) {
+      _controller.animateToPage(
+        pageChange.page,
+        duration: Duration(milliseconds: 500),
+        curve: Curves.fastOutSlowIn,
+      );
+    });
+
     return PageView.builder(
       controller: _controller,
-      onPageChanged: (page) {
-        setState(() => _currentPage = page);
-      },
+      onPageChanged: (page) => bloc.pageChange.add(PageChange(page)),
       itemCount: widget.storyList.length + 2,
       itemBuilder: (context, index) {
         if (index == 0) return Index();
-        return AnimatedPadding(
-          duration: Duration(milliseconds: 500),
-          curve: Curves.fastOutSlowIn,
-          padding: EdgeInsets.all(_currentPage == index ? 0.0 : space_big),
-          child: index == 1
-              ? NewStoryCard(
-                  elevation:
-                      _currentPage == index ? elevation_big : elevation_normal,
-                )
-              : HistoryStoryCard(
-                  story: widget.storyList[index - 2],
-                  elevation:
-                      _currentPage == index ? elevation_big : elevation_normal,
-                ),
+        return StreamWidget<PageChange>(
+          // 只接受自然滑动事件
+          stream: bloc.pageChange.stream.where((change) {
+            return !change.triggeredByBack;
+          }),
+          initData: PageChange(1),
+          builder: (page) {
+            return AnimatedPadding(
+              duration: Duration(milliseconds: 500),
+              curve: Curves.fastOutSlowIn,
+              padding: EdgeInsets.all(page.page == index ? 0.0 : space_big),
+              child: index == 1
+                  ? NewStoryCard(
+                      elevation:
+                          page.page == index ? elevation_big : elevation_normal,
+                    )
+                  : HistoryStoryCard(
+                      story: widget.storyList[index - 2],
+                      elevation:
+                          page.page == index ? elevation_big : elevation_normal,
+                    ),
+            );
+          },
         );
       },
     );
