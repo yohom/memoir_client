@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:memoir/app/model/bean/page_change.dart';
 import 'package:memoir/app/model/bean/story.dart';
+import 'package:memoir/app/res/dimens.dart';
 import 'package:memoir/app/ui/screen/stories/index.widget.dart';
 import 'package:memoir/app/ui/screen/stories/story_card/history_story_card.widget.dart';
 import 'package:memoir/app/ui/screen/stories/story_card/new_story_card.widget.dart';
@@ -13,7 +14,7 @@ class Stories extends StatelessWidget {
     final bloc = BlocProvider.of(context).storyBloc;
     return Expanded(
       child: Padding(
-        padding: EdgeInsets.only(bottom: 64.0),
+        padding: EdgeInsets.only(bottom: bottom_bar_height),
         child: SafeArea(
           child: StreamWidget<List<Story>>(
             stream: bloc.storyList

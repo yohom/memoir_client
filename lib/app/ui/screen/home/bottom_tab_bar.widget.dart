@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:memoir/app/res/dimens.dart';
 import 'package:memoir/framework/res.dart';
 
 class BottomTabBar extends StatelessWidget {
@@ -9,36 +10,40 @@ class BottomTabBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Card(
-        margin: EdgeInsets.all(space_normal),
-        elevation: 4.0,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
-        child: TabBar(
-          indicatorSize: TabBarIndicatorSize.label,
-          indicatorWeight: 4.0,
-          tabs: [
-            IconButton(
-              icon: Icon(
-                Icons.edit,
-                color: Colors.black,
+      child: SizedBox(
+        height: bottom_bar_height,
+        child: Card(
+          margin: EdgeInsets.all(space_normal),
+          elevation: 4.0,
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
+          child: TabBar(
+            indicatorSize: TabBarIndicatorSize.label,
+            indicatorWeight: 4.0,
+            tabs: [
+              IconButton(
+                icon: Icon(
+                  Icons.edit,
+                  color: Colors.black,
+                ),
+                onPressed: () {},
               ),
-              onPressed: () {},
-            ),
-            IconButton(
-              icon: Icon(
-                Icons.history,
-                color: Colors.black,
+              IconButton(
+                icon: Icon(
+                  Icons.history,
+                  color: Colors.black,
+                ),
+                onPressed: () {},
               ),
-              onPressed: () {},
-            ),
-            IconButton(
-              icon: Icon(
-                Icons.add,
-                color: Colors.black,
+              IconButton(
+                icon: Icon(
+                  Icons.add,
+                  color: Colors.black,
+                ),
+                onPressed: () {},
               ),
-              onPressed: () {},
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
