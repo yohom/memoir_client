@@ -7,7 +7,7 @@ import 'package:memoir/framework/utils.dart';
 import 'package:memoir/framework/utils/parse.dart';
 
 final dio = Dio()
-  ..options.baseUrl = base_url
+  ..options.baseUrl = BASE_URL
   ..interceptor.request.onSend = (options) {
     L.d('${options.baseUrl}${options.path}');
     return options;

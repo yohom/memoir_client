@@ -1,51 +1,58 @@
 import 'package:flutter/material.dart';
 import 'package:memoir/app/model/bean/story.dart';
-import 'package:memoir/app/ui/screen/stories/story_card/story_card.widget.dart';
 import 'package:memoir/framework/res.dart';
 import 'package:memoir/framework/ui.dart';
 
 ///
 /// 历史Story对应的Card
 ///
-class HistoryStoryCard extends StoryCard {
+class HistoryStoryCard extends StatelessWidget {
   final Story story;
+  final double elevation;
 
   HistoryStoryCard({
     Key key,
     @required this.story,
-    @required elevation,
-  }) : super(key: key, elevation: elevation);
+    @required this.elevation,
+  }) : super(key: key);
 
   @override
-  Widget buildBackground(BuildContext context) {
-    return SizedBox.expand(child: ImageWidget(imageUrl: story.storyImage));
-  }
-
-  @override
-  Widget buildContent(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(
-        horizontal: space_big,
-        vertical: space_huge,
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+  Widget build(BuildContext context) {
+    return Card(
+      color: Colors.pinkAccent,
+      elevation: elevation,
+      margin: EdgeInsets.only(bottom: space_huge, right: space_normal),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.0)),
+      child: Stack(
+        alignment: AlignmentDirectional.center,
         children: <Widget>[
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              _StoryDate(storyDate: story.formatStoryDate),
-              _Favorite(),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: <Widget>[
-              _StoryTitle(title: story.title),
-              _Mood(),
-            ],
+          SizedBox.expand(child: ImageWidget(imageUrl: story.storyImage)),
+          Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: space_big,
+              vertical: space_huge,
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    _StoryDate(storyDate: story.formatStoryDate),
+                    _Favorite(),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: <Widget>[
+                    _StoryTitle(title: story.title),
+                    _Mood(),
+                  ],
+                ),
+              ],
+            ),
           ),
         ],
       ),

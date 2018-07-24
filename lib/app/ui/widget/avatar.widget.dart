@@ -1,12 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:memoir/framework/res.dart';
 
 class Avatar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Padding(
-        padding: const EdgeInsets.only(top: 8.0),
-        child: CircleAvatar(),
+      bottom: false,
+      child: SizedBox(
+        width: 80.0,
+        height: 80.0,
+        child: Material(
+          elevation: elevation_big,
+          borderRadius: BorderRadius.circular(90.0),
+          child: CircleAvatar(
+            backgroundImage: AssetImage('assets/rabbit.png'),
+          ),
+        ),
       ),
     );
   }

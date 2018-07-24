@@ -16,8 +16,9 @@ class StoriesScreen extends StatelessWidget {
         children: <Widget>[
           Column(
             children: <Widget>[
+              SPACE_NORMAL,
               Avatar(),
-              SPACE_HUGE,
+              SPACE_BIG,
               Stories(),
             ],
           ),

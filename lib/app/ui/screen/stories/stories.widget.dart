@@ -3,8 +3,8 @@ import 'package:memoir/app/model/bean/page_change.dart';
 import 'package:memoir/app/model/bean/story.dart';
 import 'package:memoir/app/res/dimens.dart';
 import 'package:memoir/app/ui/screen/stories/index.widget.dart';
-import 'package:memoir/app/ui/screen/stories/story_card/history_story_card.widget.dart';
-import 'package:memoir/app/ui/screen/stories/story_card/new_story_card.widget.dart';
+import 'package:memoir/app/ui/screen/stories/history_story_card.widget.dart';
+import 'package:memoir/app/ui/screen/stories/new_story_card.widget.dart';
 import 'package:memoir/framework/res.dart';
 import 'package:memoir/framework/ui.dart';
 
