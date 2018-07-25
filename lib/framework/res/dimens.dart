@@ -27,6 +27,8 @@ const text_big = 18.0;
 const elevation_small = 2.0;
 const elevation_normal = 4.0;
 const elevation_big = 8.0;
+const elevation_huge = 16.0;
+const elevation_giant = 32.0;
 //endregion
 
 double onePixel(BuildContext context) {
