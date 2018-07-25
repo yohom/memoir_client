@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:memoir/app/ui/animation/transition.dart';
+import 'package:memoir/app/ui/animation/fade_in_slide_up.transition.dart';
 
 class SelectDate extends StatelessWidget {
   @override
@@ -14,11 +14,10 @@ class SelectDate extends StatelessWidget {
             heightFactor: 2.0,
             child: Text(
               'Story Date',
-              style: Theme
-                  .of(context)
-                  .textTheme
-                  .display2
-                  .copyWith(color: Colors.blue, letterSpacing: 5.0),
+              style: Theme.of(context).textTheme.display2.copyWith(
+                    color: Colors.blue.withOpacity(0.3),
+                    letterSpacing: 5.0,
+                  ),
             ),
           ),
         ),

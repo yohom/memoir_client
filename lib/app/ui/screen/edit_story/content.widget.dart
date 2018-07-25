@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:memoir/app/ui/animation/transition.dart';
+import 'package:memoir/app/ui/animation/fade_in_slide_up.transition.dart';
 import 'package:memoir/app/ui/screen/edit_story/lets_do_it.widget.dart';
 import 'package:memoir/app/ui/screen/edit_story/select_date.widget.dart';
 import 'package:memoir/app/ui/widget/avatar.widget.dart';

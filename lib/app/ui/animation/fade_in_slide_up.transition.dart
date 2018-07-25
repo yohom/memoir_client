@@ -8,11 +8,12 @@ class FadeInSlideUpTransition extends StatefulWidget {
   final int duration;
 
   FadeInSlideUpTransition({
-    this.child,
+    Key key,
     this.originOffset = 30.0,
     this.delay = 500,
     this.duration = 700,
-  });
+    this.child,
+  }) : super(key: key);
 
   @override
   _FadeInSlideTransitionState createState() {
@@ -60,5 +61,11 @@ class _FadeInSlideTransitionState extends State<FadeInSlideUpTransition>
         },
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
   }
 }
