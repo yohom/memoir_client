@@ -20,16 +20,18 @@ class Content extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: <Widget>[
         Avatar(),
-        FadeInSlideUpTransition(
-          delay: 300,
-          child: Text(
-            'Hello Hello Hello Hello Hello',
-            style: Theme
-                .of(context)
-                .textTheme
-                .headline
-                .copyWith(color: Colors.white70),
-          ),
+        FadeSlideTransition(
+          delay: Duration(milliseconds: 300),
+          builder: (context, controller) {
+            return Text(
+              'Hello Hello Hello Hello Hello',
+              style: Theme
+                  .of(context)
+                  .textTheme
+                  .headline
+                  .copyWith(color: Colors.white70),
+            );
+          },
         ),
         SelectDate(),
         LetsDoIt(),
