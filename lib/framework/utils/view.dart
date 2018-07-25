@@ -8,7 +8,7 @@ import 'package:memoir/framework/utils.dart';
 /// 显示信息
 ///
 Future<SnackBarClosedReason> showMessage(BuildContext context, String content,
-    {bool isError = false}) {
+    {bool isError = true}) {
   L.d('messge: $content');
   return Scaffold
       .of(context)

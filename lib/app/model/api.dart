@@ -7,6 +7,27 @@ import 'package:memoir/app/model/bean/story.dart';
 import 'package:memoir/framework/utils.dart';
 import 'package:memoir/framework/utils/parse.dart';
 
+class Api {
+  ///
+  /// 获取story列表
+  ///
+  static Future<List<Story>> fetchStoryList(Map<String, dynamic> data) {
+    return dio
+        .get('/story')
+        .then(list)
+        .then((list) => list.map((map) => Story.fromJson(map)).toList());
+  }
+
+  ///
+  /// 新增story
+  ///
+  static Future<Bean> addStory(Map<String, dynamic> data) {
+    return dio
+        .post('/add_story', data: data)
+        .then((bean) => Bean.fromJson(bean.data));
+  }
+}
+
 final dio = Dio()
   ..options.baseUrl = BASE_URL
   ..interceptor.request.onSend = (options) {
@@ -50,22 +71,3 @@ final dio = Dio()
     }
     return error;
   };
-
-class Api {
-  ///
-  /// 获取story列表
-  ///
-  static Future<List<Story>> fetchStoryList(Map<String, String> data) {
-    return dio
-        .get('/story')
-        .then(list)
-        .then((list) => list.map((map) => Story.fromJson(map)).toList());
-  }
-
-  ///
-  /// 新增story
-  ///
-  static Future<Bean> addStory(Map<String, String> data) {
-    return dio.get('/add_story').then((bean) => Bean.fromJson(bean.data));
-  }
-}

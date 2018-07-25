@@ -38,7 +38,8 @@ class Story {
     data['id'] = this.id;
     data['title'] = this.title;
     data['storyContent'] = this.storyContent;
-    data['storyImage'] = this.storyImage;
+    data['storyImage'] = this.storyImage ??
+        'https://i10.hoopchina.com.cn/hupuapp/bbs/81925600569265/thread_81925600569265_20180713134319_s_706810_o_w_1616_h_1080_29229.jpg?x-oss-process=image/resize,w_800/format,webp';
     data['storyDate'] = this.storyDate;
     data['hero'] = this.hero;
     return data;

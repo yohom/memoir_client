@@ -31,12 +31,12 @@ class HistoryStoryCard extends StatelessWidget {
             children: <Widget>[
               Positioned(
                 left: 24.0,
-                top: 48.0,
-                child: _StoryDate(storyDate: story.formatStoryDate),
+                top: 24.0,
+                child: _StoryDate(storyDate: story.storyDate),
               ),
               Positioned(
                 right: 24.0,
-                top: 48.0,
+                top: 24.0,
                 child: _Favorite(),
               ),
               Positioned(
@@ -66,31 +66,16 @@ class _StoryDate extends StatelessWidget {
     @required this.storyDate,
   }) : super(key: key);
 
-  final List<String> storyDate;
+  final String storyDate;
 
   @override
   Widget build(BuildContext context) {
-    final dayTheme = Theme
-        .of(context)
-        .textTheme
-        .headline
-        .copyWith(color: Colors.white, fontWeight: FontWeight.bold);
-
-    final monthTheme =
-        Theme.of(context).textTheme.subhead.copyWith(color: Colors.white);
-
-    final yearTheme =
-        Theme.of(context).textTheme.caption.copyWith(color: Colors.white);
-
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        Text(storyDate[0], style: dayTheme),
-        SPACE_NORMAL,
-        Text(storyDate[1], style: monthTheme),
-        Text(storyDate[2], style: yearTheme),
-      ],
-    );
+    return Text(storyDate,
+        style: Theme
+            .of(context)
+            .textTheme
+            .headline
+            .copyWith(color: Colors.white, fontWeight: FontWeight.bold));
   }
 }
 
