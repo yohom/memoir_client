@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:dio/dio.dart';
 import 'package:memoir/app/constants.dart';
+import 'package:memoir/app/model/bean/bean.dart';
 import 'package:memoir/app/model/bean/story.dart';
 import 'package:memoir/framework/utils.dart';
 import 'package:memoir/framework/utils/parse.dart';
@@ -52,12 +53,19 @@ final dio = Dio()
 
 class Api {
   ///
-  /// 登录
+  /// 获取story列表
   ///
   static Future<List<Story>> fetchStoryList(Map<String, String> data) {
     return dio
         .get('/story')
         .then(list)
         .then((list) => list.map((map) => Story.fromJson(map)).toList());
+  }
+
+  ///
+  /// 新增story
+  ///
+  static Future<Bean> addStory(Map<String, String> data) {
+    return dio.get('/add_story').then((bean) => Bean.fromJson(bean.data));
   }
 }

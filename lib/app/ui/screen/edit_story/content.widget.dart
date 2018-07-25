@@ -7,6 +7,7 @@ import 'package:memoir/app/ui/widget/avatar.widget.dart';
 ///
 /// 内容
 ///
+@deprecated
 class Content extends StatelessWidget {
   const Content({
     Key key,

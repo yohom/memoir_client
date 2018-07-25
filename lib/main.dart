@@ -4,7 +4,11 @@ import 'package:memoir/app/ui/screen/home/home.screen.dart';
 import 'package:memoir/framework/res.dart';
 import 'package:memoir/framework/ui.dart';
 
-void main() => runApp(MemoirApp());
+void main() {
+  MaterialPageRoute.debugEnableFadingRoutes = true;
+
+  runApp(MemoirApp());
+}
 
 class MemoirApp extends StatelessWidget {
   @override

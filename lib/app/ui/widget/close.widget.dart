@@ -5,8 +5,13 @@ import 'package:memoir/framework/res.dart';
 /// 关闭按钮
 ///
 class Close extends StatelessWidget {
+  final Color color;
+  final VoidCallback onPressed;
+
   const Close({
     Key key,
+    this.color = Colors.white30,
+    this.onPressed,
   }) : super(key: key);
 
   @override
@@ -18,10 +23,10 @@ class Close extends StatelessWidget {
           padding: EdgeInsets.only(right: space_huge, top: space_big),
           icon: Icon(
             Icons.close,
-            color: Colors.white30,
+            color: color,
             size: 36.0,
           ),
-          onPressed: () {},
+          onPressed: onPressed,
         ),
       ),
     );

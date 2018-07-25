@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:memoir/app/ui/animation/fade_in_slide_up.transition.dart';
 
+@deprecated
 class SelectDate extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

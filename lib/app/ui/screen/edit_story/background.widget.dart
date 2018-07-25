@@ -4,6 +4,7 @@ import 'package:memoir/app/constants.dart';
 ///
 /// 背景
 ///
+@deprecated
 class Background extends StatelessWidget {
   const Background({
     Key key,
