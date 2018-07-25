@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:memoir/app/ui/screen/edit_story/greeting.widget.dart';
+import 'package:memoir/app/ui/animation/transition.dart';
+import 'package:memoir/app/ui/screen/edit_story/lets_do_it.widget.dart';
+import 'package:memoir/app/ui/screen/edit_story/select_date.widget.dart';
 import 'package:memoir/app/ui/widget/avatar.widget.dart';
-import 'package:memoir/framework/res.dart';
-import 'package:rxdart/rxdart.dart';
 
 ///
 /// 内容
@@ -16,12 +16,22 @@ class Content extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: <Widget>[
-        SPACE_GIANT,
         Avatar(),
-        SPACE_HUGE,
-        SPACE_HUGE,
-        Greeting(),
+        FadeInSlideUpTransition(
+          delay: 300,
+          child: Text(
+            'Hello Hello Hello Hello Hello',
+            style: Theme
+                .of(context)
+                .textTheme
+                .headline
+                .copyWith(color: Colors.white70),
+          ),
+        ),
+        SelectDate(),
+        LetsDoIt(),
       ],
     );
   }

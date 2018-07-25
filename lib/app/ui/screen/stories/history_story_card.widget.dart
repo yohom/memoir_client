@@ -27,32 +27,29 @@ class HistoryStoryCard extends StatelessWidget {
         alignment: AlignmentDirectional.center,
         children: <Widget>[
           SizedBox.expand(child: ImageWidget(imageUrl: story.storyImage)),
-          Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: space_big,
-              vertical: space_huge,
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    _StoryDate(storyDate: story.formatStoryDate),
-                    _Favorite(),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: <Widget>[
-                    _StoryTitle(title: story.title),
-                    _Mood(),
-                  ],
-                ),
-              ],
-            ),
+          Stack(
+            children: <Widget>[
+              Positioned(
+                left: 24.0,
+                top: 48.0,
+                child: _StoryDate(storyDate: story.formatStoryDate),
+              ),
+              Positioned(
+                right: 24.0,
+                top: 48.0,
+                child: _Favorite(),
+              ),
+              Positioned(
+                left: 24.0,
+                bottom: 24.0,
+                child: _StoryTitle(title: story.title),
+              ),
+              Positioned(
+                right: 24.0,
+                bottom: 24.0,
+                child: _Mood(),
+              ),
+            ],
           ),
         ],
       ),
