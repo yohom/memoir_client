@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:memoir/app/constants.dart';
 import 'package:memoir/app/ui/screen/edit_story/edit_story.screen.dart';
 import 'package:memoir/framework/res.dart';
+import 'package:memoir/framework/ui.dart';
 import 'package:memoir/framework/utils.dart';
 
-class NewStoryCard extends StatelessWidget {
+class NewStoryCard extends BaseStatelessWidget {
   final double elevation;
 
   NewStoryCard({
@@ -13,7 +14,7 @@ class NewStoryCard extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget delegateBuild(BuildContext context) {
     return GestureDetector(
       onTap: () => Router.navigate(context, EditStoryScreen()),
       child: Card(

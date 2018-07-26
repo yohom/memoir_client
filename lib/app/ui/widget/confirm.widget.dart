@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:memoir/app/ui/animation/fade_in_slide_up.transition.dart';
 import 'package:memoir/framework/res.dart';
+import 'package:memoir/framework/ui.dart';
 import 'package:memoir/framework/utils.dart';
 
-class Confirm extends StatelessWidget {
+class Confirm extends BaseStatelessWidget {
   @override
-  Widget build(BuildContext context) {
+  Widget delegateBuild(BuildContext context) {
     return FadeSlideTransition(
       duration: Duration(milliseconds: 500),
       slideCurve: Curves.elasticOut,

@@ -1,19 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:memoir/app/bloc/story_bloc.dart';
-import 'package:memoir/app/model/bean/story.dart';
 import 'package:memoir/app/ui/route/dialog.route.dart';
-import 'package:memoir/app/ui/screen/edit_story/background.widget.dart';
 import 'package:memoir/app/ui/widget/close.widget.dart';
-import 'package:memoir/app/ui/screen/edit_story/content.widget.dart';
 import 'package:memoir/app/ui/widget/confirm.widget.dart';
 import 'package:memoir/framework/res.dart';
 import 'package:memoir/framework/ui.dart';
+import 'package:memoir/framework/ui/base.widget.dart';
 import 'package:memoir/framework/ui/debounce_text_field.widget.dart';
-import 'package:memoir/framework/utils.dart';
 
-class EditStoryScreen extends StatelessWidget {
+class EditStoryScreen extends BaseStatelessWidget {
   @override
-  Widget build(BuildContext context) {
+  Widget delegateBuild(BuildContext context) {
     final bloc = BlocProvider.of(context).storyBloc;
     return Scaffold(
       body: Stack(
@@ -81,13 +77,13 @@ class EditStoryScreen extends StatelessWidget {
 ///
 /// 保存按钮
 ///
-class _Save extends StatelessWidget {
+class _Save extends BaseStatelessWidget {
   const _Save({
     Key key,
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget delegateBuild(BuildContext context) {
     final bloc = BlocProvider.of(context).storyBloc;
     return FlatButton(
       padding: EdgeInsets.symmetric(vertical: space_big),

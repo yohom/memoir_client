@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:memoir/app/ui/animation/show_up.transition.dart';
 import 'package:memoir/framework/res.dart';
+import 'package:memoir/framework/ui.dart';
 
 @deprecated
-class LetsDoIt extends StatelessWidget {
+class LetsDoIt extends BaseStatelessWidget {
   @override
-  Widget build(BuildContext context) {
+  Widget delegateBuild(BuildContext context) {
     return ShowUpTransition(
       delay: 1800,
       child: FractionallySizedBox(

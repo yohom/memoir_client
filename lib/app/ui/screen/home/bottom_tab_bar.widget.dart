@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:memoir/app/res/dimens.dart';
 import 'package:memoir/framework/res.dart';
+import 'package:memoir/framework/ui.dart';
 
-class BottomTabBar extends StatelessWidget {
+class BottomTabBar extends BaseStatelessWidget {
   const BottomTabBar({
     Key key,
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget delegateBuild(BuildContext context) {
     return SafeArea(
       child: SizedBox(
         height: bottom_bar_height,

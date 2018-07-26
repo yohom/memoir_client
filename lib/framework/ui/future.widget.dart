@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:memoir/framework/ui.dart';
 import 'package:memoir/framework/ui/empty.widget.dart';
 import 'package:memoir/framework/ui/loading.widget.dart';
 import 'package:meta/meta.dart';
@@ -8,7 +9,7 @@ import 'package:memoir/framework/ui/error.widget.dart' as ui;
 
 typedef Widget FutureWidgetBuilder<DATA>(DATA data);
 
-class FutureWidget<T> extends StatelessWidget {
+class FutureWidget<T> extends BaseStatelessWidget {
   final Future<T> future;
   final FutureWidgetBuilder<T> builder;
   final bool showLoading;
@@ -25,7 +26,7 @@ class FutureWidget<T> extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget delegateBuild(BuildContext context) {
     return FutureBuilder<T>(
       initialData: initialData,
       future: future,

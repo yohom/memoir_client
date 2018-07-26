@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:memoir/app/ui/animation/show_up.transition.dart';
 import 'package:memoir/framework/res.dart';
+import 'package:memoir/framework/ui.dart';
 
-class Avatar extends StatelessWidget {
+class Avatar extends BaseStatelessWidget {
   @override
-  Widget build(BuildContext context) {
+  Widget delegateBuild(BuildContext context) {
     return SafeArea(
       bottom: false,
       child: ShowUpTransition(

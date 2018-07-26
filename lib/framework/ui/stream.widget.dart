@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:memoir/framework/ui.dart';
 import 'package:memoir/framework/ui/empty.widget.dart';
 import 'package:memoir/framework/ui/error.widget.dart' as error;
 import 'package:memoir/framework/ui/loading.widget.dart';
@@ -7,7 +8,7 @@ import 'package:rxdart/rxdart.dart';
 
 typedef Widget StreamWidgetBuilder<DATA>(DATA data);
 
-class StreamWidget<T> extends StatelessWidget {
+class StreamWidget<T> extends BaseStatelessWidget {
   final Observable<T> stream;
   final StreamWidgetBuilder<T> builder;
 
@@ -33,7 +34,7 @@ class StreamWidget<T> extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget delegateBuild(BuildContext context) {
     return StreamBuilder<T>(
       initialData: initData,
       stream: stream,
