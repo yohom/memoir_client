@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:memoir/framework/ui.dart';
 import 'package:rxdart/rxdart.dart';
 
-class ShowUpTransition extends BaseStatefulWidget {
+class ShowUpTransition extends StatefulWidget {
   final int delay;
   final int duration;
   final Widget child;
@@ -20,7 +20,7 @@ class ShowUpTransition extends BaseStatefulWidget {
   }
 }
 
-class _ShowUpTransitionState extends BaseState<ShowUpTransition>
+class _ShowUpTransitionState extends State<ShowUpTransition>
     with TickerProviderStateMixin {
   AnimationController _controller;
   Animation<double> _animation;
@@ -41,7 +41,7 @@ class _ShowUpTransitionState extends BaseState<ShowUpTransition>
   }
 
   @override
-  Widget delegateBuild(BuildContext context) {
+  Widget build(BuildContext context) {
     return ScaleTransition(
       scale: _animation,
       child: widget.child,

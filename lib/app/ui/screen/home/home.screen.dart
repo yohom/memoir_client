@@ -3,9 +3,9 @@ import 'package:memoir/app/ui/screen/home/bottom_tab_bar.widget.dart';
 import 'package:memoir/app/ui/screen/stories/stories.screen.dart';
 import 'package:memoir/framework/ui.dart';
 
-class HomeScreen extends BaseStatelessWidget {
+class HomeScreen extends StatelessWidget {
   @override
-  Widget delegateBuild(BuildContext context) {
+  Widget build(BuildContext context) {
     return DefaultTabController(
       length: 3,
       child: Scaffold(

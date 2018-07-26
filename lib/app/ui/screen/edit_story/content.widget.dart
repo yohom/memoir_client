@@ -9,13 +9,13 @@ import 'package:memoir/framework/ui.dart';
 /// 内容
 ///
 @deprecated
-class Content extends BaseStatelessWidget {
+class Content extends StatelessWidget {
   const Content({
     Key key,
   }) : super(key: key);
 
   @override
-  Widget delegateBuild(BuildContext context) {
+  Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.spaceAround,

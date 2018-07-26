@@ -9,7 +9,7 @@ import 'package:memoir/framework/ui/error.widget.dart' as ui;
 
 typedef Widget FutureWidgetBuilder<DATA>(DATA data);
 
-class FutureWidget<T> extends BaseStatelessWidget {
+class FutureWidget<T> extends StatelessWidget {
   final Future<T> future;
   final FutureWidgetBuilder<T> builder;
   final bool showLoading;
@@ -26,7 +26,7 @@ class FutureWidget<T> extends BaseStatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget delegateBuild(BuildContext context) {
+  Widget build(BuildContext context) {
     return FutureBuilder<T>(
       initialData: initialData,
       future: future,

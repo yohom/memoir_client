@@ -5,7 +5,7 @@ import 'package:memoir/framework/res.dart';
 import 'package:memoir/framework/ui.dart';
 import 'package:memoir/framework/utils.dart';
 
-class NewStoryCard extends BaseStatelessWidget {
+class NewStoryCard extends StatelessWidget {
   final double elevation;
 
   NewStoryCard({
@@ -14,7 +14,7 @@ class NewStoryCard extends BaseStatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget delegateBuild(BuildContext context) {
+  Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => Router.navigate(context, EditStoryScreen()),
       child: Card(

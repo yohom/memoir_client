@@ -5,7 +5,7 @@ import 'package:memoir/framework/ui.dart';
 ///
 /// 关闭按钮
 ///
-class Close extends BaseStatelessWidget {
+class Close extends StatelessWidget {
   final Color color;
   final VoidCallback onPressed;
 
@@ -16,7 +16,7 @@ class Close extends BaseStatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget delegateBuild(BuildContext context) {
+  Widget build(BuildContext context) {
     return SafeArea(
       child: Align(
         alignment: AlignmentDirectional.topEnd,

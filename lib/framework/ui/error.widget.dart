@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:memoir/framework/ui.dart';
 
-class ErrorWidget extends BaseStatelessWidget {
+class ErrorWidget extends StatelessWidget {
   final String message;
 
   const ErrorWidget({
@@ -10,7 +10,7 @@ class ErrorWidget extends BaseStatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget delegateBuild(BuildContext context) {
+  Widget build(BuildContext context) {
     return Center(
       child: Text(message ?? '没有数据', style: TextStyle(color: Colors.red)),
     );

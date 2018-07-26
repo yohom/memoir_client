@@ -4,7 +4,7 @@ import 'package:rxdart/rxdart.dart';
 
 typedef Widget Builder(BuildContext context, AnimationController controller);
 
-class FadeSlideTransition extends BaseStatefulWidget {
+class FadeSlideTransition extends StatefulWidget {
   ///
   /// [builder]有两个参数, 一个是[BuildContext], 就是常规用法, 另一个是[controller], 是
   /// 为了在[builder]方法体中能够控制动画, 比如说进行动画的reverse.
@@ -58,7 +58,7 @@ class FadeSlideTransition extends BaseStatefulWidget {
   }
 }
 
-class _FadeInSlideTransitionState extends BaseState<FadeSlideTransition>
+class _FadeInSlideTransitionState extends State<FadeSlideTransition>
     with SingleTickerProviderStateMixin {
   AnimationController _controller;
   Animation<double> _slideAnimation;
@@ -91,7 +91,7 @@ class _FadeInSlideTransitionState extends BaseState<FadeSlideTransition>
   }
 
   @override
-  Widget delegateBuild(BuildContext context) {
+  Widget build(BuildContext context) {
     return Transform.translate(
       offset: widget.originOffset,
       child: AnimatedBuilder(

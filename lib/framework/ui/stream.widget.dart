@@ -8,7 +8,7 @@ import 'package:rxdart/rxdart.dart';
 
 typedef Widget StreamWidgetBuilder<DATA>(DATA data);
 
-class StreamWidget<T> extends BaseStatelessWidget {
+class StreamWidget<T> extends StatelessWidget {
   final Observable<T> stream;
   final StreamWidgetBuilder<T> builder;
 
@@ -34,7 +34,7 @@ class StreamWidget<T> extends BaseStatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget delegateBuild(BuildContext context) {
+  Widget build(BuildContext context) {
     return StreamBuilder<T>(
       initialData: initData,
       stream: stream,

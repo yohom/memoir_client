@@ -3,9 +3,9 @@ import 'package:memoir/app/ui/animation/fade_in_slide_up.transition.dart';
 import 'package:memoir/framework/ui.dart';
 
 @deprecated
-class SelectDate extends BaseStatelessWidget {
+class SelectDate extends StatelessWidget {
   @override
-  Widget delegateBuild(BuildContext context) {
+  Widget build(BuildContext context) {
     return Stack(
       alignment: AlignmentDirectional.center,
       children: <Widget>[

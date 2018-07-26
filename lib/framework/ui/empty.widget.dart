@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:memoir/framework/ui.dart';
 
-class EmptyWidget extends BaseStatelessWidget {
+class EmptyWidget extends StatelessWidget {
   const EmptyWidget({Key key}) : super(key: key);
 
   @override
-  Widget delegateBuild(BuildContext context) {
+  Widget build(BuildContext context) {
     return SizedBox(
       height: 0.0,
       width: 0.0,

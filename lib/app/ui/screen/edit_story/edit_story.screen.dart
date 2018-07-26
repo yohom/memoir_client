@@ -4,12 +4,11 @@ import 'package:memoir/app/ui/widget/close.widget.dart';
 import 'package:memoir/app/ui/widget/confirm.widget.dart';
 import 'package:memoir/framework/res.dart';
 import 'package:memoir/framework/ui.dart';
-import 'package:memoir/framework/ui/base.widget.dart';
 import 'package:memoir/framework/ui/debounce_text_field.widget.dart';
 
-class EditStoryScreen extends BaseStatelessWidget {
+class EditStoryScreen extends StatelessWidget {
   @override
-  Widget delegateBuild(BuildContext context) {
+  Widget build(BuildContext context) {
     final bloc = BlocProvider.of(context).storyBloc;
     return Scaffold(
       body: Stack(
@@ -77,13 +76,13 @@ class EditStoryScreen extends BaseStatelessWidget {
 ///
 /// 保存按钮
 ///
-class _Save extends BaseStatelessWidget {
+class _Save extends StatelessWidget {
   const _Save({
     Key key,
   }) : super(key: key);
 
   @override
-  Widget delegateBuild(BuildContext context) {
+  Widget build(BuildContext context) {
     final bloc = BlocProvider.of(context).storyBloc;
     return FlatButton(
       padding: EdgeInsets.symmetric(vertical: space_big),

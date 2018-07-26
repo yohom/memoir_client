@@ -4,9 +4,9 @@ import 'package:memoir/framework/res.dart';
 import 'package:memoir/framework/ui.dart';
 
 @deprecated
-class LetsDoIt extends BaseStatelessWidget {
+class LetsDoIt extends StatelessWidget {
   @override
-  Widget delegateBuild(BuildContext context) {
+  Widget build(BuildContext context) {
     return ShowUpTransition(
       delay: 1800,
       child: FractionallySizedBox(

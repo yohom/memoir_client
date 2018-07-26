@@ -1,4 +1,5 @@
 import 'dart:async';
+
 import 'package:memoir/framework/utils/log.dart';
 import 'package:rxdart/rxdart.dart';
 
@@ -8,32 +9,33 @@ typedef bool Equal<T>(T data1, T data2);
 class Event<T> {
   T latest;
   Observable<T> stream;
+
+  ///
+  /// 判断新值与旧值是否相同
+  ///
   Equal test;
+
+  ///
+  /// 是否只有不同的值(由[test]定义不同, 如果[test]为空, 那么直接用[==]判断)才发射新数据
+  ///
   bool isDistinct;
+
+  ///
+  /// 初始值, 传递给内部的[_subject]
+  ///
   T seedValue;
+
+  ///
+  /// 是否接受null
+  ///
   bool acceptNull;
 
   Subject<T> _subject;
 
   Event({
-    ///
-    /// 判断新值与旧值是否相同
-    ///
     this.test,
-
-    ///
-    /// 是否只有不同的值(由[test]定义不同, 如果[test]为空, 那么直接用[==]判断)才发射新数据
-    ///
     this.isDistinct = false,
-
-    ///
-    /// 初始值, 传递给内部的[_subject]
-    ///
     this.seedValue,
-
-    ///
-    /// 是否接受null
-    ///
     this.acceptNull = false,
 
     ///

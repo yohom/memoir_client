@@ -7,9 +7,9 @@ import 'package:memoir/app/ui/widget/avatar.widget.dart';
 import 'package:memoir/framework/res.dart';
 import 'package:memoir/framework/ui.dart';
 
-class StoriesScreen extends BaseStatelessWidget {
+class StoriesScreen extends StatelessWidget {
   @override
-  Widget delegateBuild(BuildContext context) {
+  Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).backgroundColor,
       body: Stack(

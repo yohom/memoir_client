@@ -6,13 +6,13 @@ import 'package:memoir/framework/ui.dart';
 /// 背景
 ///
 @deprecated
-class Background extends BaseStatelessWidget {
+class Background extends StatelessWidget {
   const Background({
     Key key,
   }) : super(key: key);
 
   @override
-  Widget delegateBuild(BuildContext context) {
+  Widget build(BuildContext context) {
     return Hero(
       tag: NEW_STORY_CARD_TO_EDIT_STORY,
       child: Container(

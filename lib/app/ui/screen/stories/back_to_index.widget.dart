@@ -3,13 +3,13 @@ import 'package:memoir/app/model/bean/page_change.dart';
 import 'package:memoir/framework/res.dart';
 import 'package:memoir/framework/ui.dart';
 
-class BackToIndex extends BaseStatelessWidget {
+class BackToIndex extends StatelessWidget {
   const BackToIndex({
     Key key,
   }) : super(key: key);
 
   @override
-  Widget delegateBuild(BuildContext context) {
+  Widget build(BuildContext context) {
     final bloc = BlocProvider.of(context).storyBloc;
     return SafeArea(
       child: StreamWidget<PageChange>(

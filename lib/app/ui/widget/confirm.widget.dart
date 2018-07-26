@@ -4,9 +4,9 @@ import 'package:memoir/framework/res.dart';
 import 'package:memoir/framework/ui.dart';
 import 'package:memoir/framework/utils.dart';
 
-class Confirm extends BaseStatelessWidget {
+class Confirm extends StatelessWidget {
   @override
-  Widget delegateBuild(BuildContext context) {
+  Widget build(BuildContext context) {
     return FadeSlideTransition(
       duration: Duration(milliseconds: 500),
       slideCurve: Curves.elasticOut,

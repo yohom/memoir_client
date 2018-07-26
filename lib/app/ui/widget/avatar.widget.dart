@@ -3,9 +3,9 @@ import 'package:memoir/app/ui/animation/show_up.transition.dart';
 import 'package:memoir/framework/res.dart';
 import 'package:memoir/framework/ui.dart';
 
-class Avatar extends BaseStatelessWidget {
+class Avatar extends StatelessWidget {
   @override
-  Widget delegateBuild(BuildContext context) {
+  Widget build(BuildContext context) {
     return SafeArea(
       bottom: false,
       child: ShowUpTransition(

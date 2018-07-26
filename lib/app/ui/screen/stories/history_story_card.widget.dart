@@ -6,7 +6,7 @@ import 'package:memoir/framework/ui.dart';
 ///
 /// 历史Story对应的Card
 ///
-class HistoryStoryCard extends BaseStatelessWidget {
+class HistoryStoryCard extends StatelessWidget {
   final Story story;
   final double elevation;
 
@@ -17,7 +17,7 @@ class HistoryStoryCard extends BaseStatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget delegateBuild(BuildContext context) {
+  Widget build(BuildContext context) {
     return Card(
       color: Colors.pinkAccent,
       elevation: elevation,
@@ -60,7 +60,7 @@ class HistoryStoryCard extends BaseStatelessWidget {
 ///
 /// story日期
 ///
-class _StoryDate extends BaseStatelessWidget {
+class _StoryDate extends StatelessWidget {
   const _StoryDate({
     Key key,
     @required this.storyDate,
@@ -69,7 +69,7 @@ class _StoryDate extends BaseStatelessWidget {
   final String storyDate;
 
   @override
-  Widget delegateBuild(BuildContext context) {
+  Widget build(BuildContext context) {
     return Text(storyDate,
         style: Theme
             .of(context)
@@ -82,13 +82,13 @@ class _StoryDate extends BaseStatelessWidget {
 ///
 /// 是否favorite
 ///
-class _Favorite extends BaseStatelessWidget {
+class _Favorite extends StatelessWidget {
   const _Favorite({
     Key key,
   }) : super(key: key);
 
   @override
-  Widget delegateBuild(BuildContext context) {
+  Widget build(BuildContext context) {
     return IconButton(
       icon: Icon(Icons.favorite_border, color: Colors.white),
       onPressed: () {},
@@ -99,7 +99,7 @@ class _Favorite extends BaseStatelessWidget {
 ///
 /// story标题
 ///
-class _StoryTitle extends BaseStatelessWidget {
+class _StoryTitle extends StatelessWidget {
   const _StoryTitle({
     Key key,
     @required this.title,
@@ -108,7 +108,7 @@ class _StoryTitle extends BaseStatelessWidget {
   final String title;
 
   @override
-  Widget delegateBuild(BuildContext context) {
+  Widget build(BuildContext context) {
     return Text(
       title,
       style: Theme.of(context).textTheme.headline.copyWith(color: Colors.white),
@@ -119,13 +119,13 @@ class _StoryTitle extends BaseStatelessWidget {
 ///
 /// 心情
 ///
-class _Mood extends BaseStatelessWidget {
+class _Mood extends StatelessWidget {
   const _Mood({
     Key key,
   }) : super(key: key);
 
   @override
-  Widget delegateBuild(BuildContext context) {
+  Widget build(BuildContext context) {
     return Text('d');
   }
 }

@@ -3,13 +3,13 @@ import 'package:memoir/app/res/dimens.dart';
 import 'package:memoir/framework/res.dart';
 import 'package:memoir/framework/ui.dart';
 
-class BottomTabBar extends BaseStatelessWidget {
+class BottomTabBar extends StatelessWidget {
   const BottomTabBar({
     Key key,
   }) : super(key: key);
 
   @override
-  Widget delegateBuild(BuildContext context) {
+  Widget build(BuildContext context) {
     return SafeArea(
       child: SizedBox(
         height: bottom_bar_height,

@@ -5,9 +5,9 @@ import 'package:memoir/framework/ui.dart';
 ///
 /// Page的第一页
 ///
-class Index extends BaseStatelessWidget {
+class Index extends StatelessWidget {
   @override
-  Widget delegateBuild(BuildContext context) {
+  Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.start,

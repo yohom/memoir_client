@@ -10,7 +10,7 @@ import 'package:rxdart/rxdart.dart';
 /// 根据输入的节奏来调整网络请求的次数, [duration]参数可以设置在用户停止输入多久之后, 开始网络
 /// 请求(或其他耗资源操作).
 ///
-class DebounceTextField extends BaseStatefulWidget {
+class DebounceTextField extends StatefulWidget {
   ///
   /// change触发方法
   ///
@@ -74,7 +74,7 @@ class DebounceTextField extends BaseStatefulWidget {
   }
 }
 
-class _DebounceTextFieldState extends BaseState<DebounceTextField> {
+class _DebounceTextFieldState extends State<DebounceTextField> {
   final _subject = PublishSubject<String>();
 
   @override
@@ -84,7 +84,7 @@ class _DebounceTextFieldState extends BaseState<DebounceTextField> {
   }
 
   @override
-  Widget delegateBuild(BuildContext context) {
+  Widget build(BuildContext context) {
     return TextField(
       onChanged: (text) => _subject.add(text),
       controller: widget.controller,

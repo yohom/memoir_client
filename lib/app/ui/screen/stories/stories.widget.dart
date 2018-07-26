@@ -8,9 +8,9 @@ import 'package:memoir/app/ui/screen/stories/new_story_card.widget.dart';
 import 'package:memoir/framework/res.dart';
 import 'package:memoir/framework/ui.dart';
 
-class Stories extends BaseStatelessWidget {
+class Stories extends StatelessWidget {
   @override
-  Widget delegateBuild(BuildContext context) {
+  Widget build(BuildContext context) {
     final bloc = BlocProvider.of(context).storyBloc;
     return Expanded(
       child: Padding(
@@ -30,7 +30,7 @@ class Stories extends BaseStatelessWidget {
 ///
 /// Stories的具体实现
 ///
-class _StoryPageView extends BaseStatefulWidget {
+class _StoryPageView extends StatefulWidget {
   final List<Story> storyList;
 
   _StoryPageView(this.storyList);
@@ -39,11 +39,11 @@ class _StoryPageView extends BaseStatefulWidget {
   _StoryListState createState() => _StoryListState();
 }
 
-class _StoryListState extends BaseState<_StoryPageView> {
+class _StoryListState extends State<_StoryPageView> {
   final _controller = PageController(viewportFraction: 0.8);
 
   @override
-  Widget delegateBuild(BuildContext context) {
+  Widget build(BuildContext context) {
     final bloc = BlocProvider.of(context).storyBloc;
 
     // 如果是手动按了返回按钮, 让PageView滚回第一页
