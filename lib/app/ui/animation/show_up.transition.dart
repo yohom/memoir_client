@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:memoir/framework/ui.dart';
 import 'package:rxdart/rxdart.dart';
 
 class ShowUpTransition extends StatefulWidget {
@@ -34,8 +33,7 @@ class _ShowUpTransitionState extends State<ShowUpTransition>
     );
     _animation = CurvedAnimation(parent: _controller, curve: Curves.elasticOut);
 
-    Observable
-        .just('')
+    Observable.just('')
         .delay(Duration(milliseconds: widget.delay))
         .listen((_) => _controller.forward());
   }

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:memoir/app/ui/animation/fade_in_slide_up.transition.dart';
+import 'package:memoir/app/ui/animation/fade_slide.transition.dart';
 import 'package:memoir/framework/res.dart';
-import 'package:memoir/framework/ui.dart';
 import 'package:memoir/framework/utils.dart';
 
 class Confirm extends StatelessWidget {

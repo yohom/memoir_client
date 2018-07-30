@@ -4,6 +4,11 @@ import 'package:rxdart/rxdart.dart';
 
 typedef Widget Builder(BuildContext context, AnimationController controller);
 
+enum SlideDirection {
+  vertical,
+  horizontal,
+}
+
 class FadeSlideTransition extends StatefulWidget {
   ///
   /// [builder]有两个参数, 一个是[BuildContext], 就是常规用法, 另一个是[controller], 是
@@ -41,6 +46,11 @@ class FadeSlideTransition extends StatefulWidget {
   ///
   final Curve slideReverseCurve;
 
+  ///
+  /// 滑动的方向
+  ///
+  final SlideDirection direction;
+
   FadeSlideTransition({
     Key key,
     this.originOffset = const Offset(0.0, 30.0),
@@ -49,6 +59,7 @@ class FadeSlideTransition extends StatefulWidget {
     this.fadeCurve = Curves.decelerate,
     this.slideCurve = Curves.decelerate,
     this.slideReverseCurve = Curves.decelerate,
+    this.direction = SlideDirection.vertical,
     this.builder,
   }) : super(key: key);
 
@@ -82,8 +93,7 @@ class _FadeInSlideTransitionState extends State<FadeSlideTransition>
       curve: widget.fadeCurve,
     );
 
-    Observable
-        .just('')
+    Observable.just('')
         .delay(widget.delay)
         .listen((_) => _controller.forward());
 
@@ -100,8 +110,12 @@ class _FadeInSlideTransitionState extends State<FadeSlideTransition>
         builder: (context, child) {
           return Transform.translate(
             offset: Offset(
-              0.0,
-              -_slideAnimation.value * widget.originOffset.dy,
+              widget.direction == SlideDirection.horizontal
+                  ? -_slideAnimation.value * widget.originOffset.dx
+                  : 0.0,
+              widget.direction == SlideDirection.vertical
+                  ? -_slideAnimation.value * widget.originOffset.dy
+                  : 0.0,
             ),
             child: Opacity(
               opacity: _fadeAnimation.value,

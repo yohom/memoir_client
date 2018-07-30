@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:memoir/app/ui/animation/fade_in_slide_up.transition.dart';
+import 'package:memoir/app/ui/animation/fade_slide.transition.dart';
 import 'package:memoir/framework/ui.dart';
 
 @deprecated
@@ -33,16 +33,14 @@ class SelectDate extends StatelessWidget {
               children: <Widget>[
                 Text(
                   'July 13',
-                  style: Theme
-                      .of(context)
+                  style: Theme.of(context)
                       .textTheme
                       .subhead
                       .copyWith(color: Colors.white),
                 ),
                 Text(
                   'YESTERDAY',
-                  style: Theme
-                      .of(context)
+                  style: Theme.of(context)
                       .textTheme
                       .subhead
                       .copyWith(color: Colors.white70),
