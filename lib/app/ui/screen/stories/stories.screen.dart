@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:memoir/app/bloc/story_bloc.dart';
-import 'package:memoir/app/model/bean/page_change.dart';
 import 'package:memoir/app/ui/screen/stories/back_to_index.widget.dart';
 import 'package:memoir/app/ui/screen/stories/stories.widget.dart';
 import 'package:memoir/app/ui/widget/avatar.widget.dart';
 import 'package:memoir/framework/res.dart';
-import 'package:memoir/framework/ui.dart';
 
 class StoriesScreen extends StatelessWidget {
   @override

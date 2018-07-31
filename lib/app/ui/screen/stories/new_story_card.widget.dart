@@ -43,7 +43,7 @@ class NewStoryCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Icon(Icons.add, color: Colors.white, size: 100.0),
-                Text('撰写史料', style: TextStyle(color: Colors.white)),
+                Text('ADD NEW STORY', style: TextStyle(color: Colors.white)),
               ],
             ),
           ],

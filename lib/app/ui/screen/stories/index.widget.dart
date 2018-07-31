@@ -13,12 +13,14 @@ class Index extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Text(
-          '自传',
-          style: Theme.of(context).textTheme.display3,
+          'Your Stories',
+          style: Theme.of(context).textTheme.display1,
         ),
         SizedBox(width: 100.0, child: Divider(height: space_huge)),
-        Text('标签'),
-        Text('# 最爱'),
+        SPACE_NORMAL,
+        Text('FILTER STORIES'),
+        SPACE_BIG,
+        Text('# Favorites'),
       ],
     );
   }
