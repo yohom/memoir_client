@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:memoir/app/bloc/bloc.dart';
+import 'package:memoir/app/res/color.dart';
 import 'package:memoir/app/ui/screen/home/home.screen.dart';
 import 'package:memoir/framework/res.dart';
 import 'package:memoir/framework/ui.dart';
@@ -20,6 +21,7 @@ class MemoirApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
           backgroundColor: backgroundColor,
+          buttonColor: buttonColor,
         ),
         home: HomeScreen(),
       ),

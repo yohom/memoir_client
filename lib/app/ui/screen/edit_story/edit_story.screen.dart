@@ -97,7 +97,15 @@ class _Save extends StatelessWidget {
           barrierDismissible: false,
           context: context,
           builder: (context) {
-            return Confirm();
+            return Confirm(
+              onConfirm: () {},
+              child: Column(
+                children: <Widget>[
+                  Text('title'),
+                  Text('content'),
+                ],
+              ),
+            );
           },
         );
       },

@@ -8,7 +8,7 @@ import 'package:memoir/app/ui/screen/stories/mood.widget.dart';
 import 'package:memoir/app/ui/screen/stories/story_date.widget.dart';
 import 'package:memoir/app/ui/screen/stories/story_title.widget.dart';
 import 'package:memoir/app/ui/screen/story_detail/content.widget.dart';
-import 'package:memoir/app/ui/screen/story_detail/operate.widget.dart';
+import 'package:memoir/app/ui/screen/story_detail/operate_group/operate_gourp.widget.dart';
 import 'package:memoir/app/ui/screen/story_detail/summary.widget.dart';
 import 'package:memoir/framework/res.dart';
 import 'package:memoir/framework/ui.dart';
@@ -17,7 +17,10 @@ import 'package:memoir/framework/utils.dart';
 class StoryDetailScreen extends StatefulWidget {
   final Story story;
 
-  const StoryDetailScreen({Key key, this.story}) : super(key: key);
+  const StoryDetailScreen({
+    Key key,
+    @required this.story,
+  }) : super(key: key);
 
   @override
   _StoryDetailScreenState createState() {
@@ -63,14 +66,10 @@ class _StoryDetailScreenState extends State<StoryDetailScreen> {
               children: <Widget>[
                 SizedBox(height: getScreenSize(context).height * 0.7),
                 Summary(story: widget.story),
-                FadeSlideTransition(
-                  originOffset: Offset(0.0, 200.0),
-                  delay: Duration(microseconds: 600),
-                  builder: (_, __) => Content(story: widget.story),
-                ),
+                Content(story: widget.story),
               ],
             ),
-            Positioned(child: OperateGroup()),
+            OperateGroup(story: widget.story),
           ],
         ),
       ),

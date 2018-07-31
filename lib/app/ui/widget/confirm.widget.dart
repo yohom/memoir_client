@@ -4,6 +4,19 @@ import 'package:memoir/framework/res.dart';
 import 'package:memoir/framework/utils.dart';
 
 class Confirm extends StatelessWidget {
+  final Widget child;
+  final VoidCallback onConfirm;
+  final VoidCallback onCancel;
+  final double heightFactor;
+
+  Confirm({
+    Key key,
+    this.onCancel,
+    this.heightFactor = 0.4,
+    @required this.onConfirm,
+    @required this.child,
+  });
+
   @override
   Widget build(BuildContext context) {
     return FadeSlideTransition(
@@ -14,7 +27,7 @@ class Confirm extends StatelessWidget {
       builder: (context, controller) {
         return FractionallySizedBox(
           widthFactor: 0.9,
-          heightFactor: 0.4,
+          heightFactor: heightFactor,
           child: Card(
             elevation: elevation_giant,
             shape: RoundedRectangleBorder(
@@ -22,17 +35,18 @@ class Confirm extends StatelessWidget {
             ),
             child: Column(
               children: <Widget>[
-                Text('title'),
-                Text('content'),
+                Flexible(child: child),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
                     FlatButton(
                       onPressed: () {
+                        if (onCancel != null) onCancel();
                         controller.reverse().then((_) => Router.pop(context));
                       },
                       child: Icon(Icons.close),
                     ),
-                    FlatButton(onPressed: () {}, child: Icon(Icons.check)),
+                    FlatButton(onPressed: onConfirm, child: Icon(Icons.check)),
                   ],
                 ),
               ],
