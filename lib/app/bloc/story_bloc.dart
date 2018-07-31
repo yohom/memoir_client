@@ -25,6 +25,11 @@ class StoryBloc {
   final newStory = Event<Story>(seedValue: Story());
 
   ///
+  /// 显示更多操作
+  ///
+  final showMoreOperate = Event<bool>(seedValue: false, isBehavior: true);
+
+  ///
   /// 获取story列表
   ///
   Future<List<Story>> performFetchStoryList() {

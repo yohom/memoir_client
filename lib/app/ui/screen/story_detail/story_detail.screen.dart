@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:memoir/app/bloc/story_bloc.dart';
 import 'package:memoir/app/model/bean/story.dart';
 import 'package:memoir/app/ui/animation/fade_slide.transition.dart';
 import 'package:memoir/app/ui/screen/stories/mood.widget.dart';
@@ -27,6 +28,7 @@ class StoryDetailScreen extends StatefulWidget {
 class _StoryDetailScreenState extends State<StoryDetailScreen> {
   final _controller = ScrollController();
 
+  StoryBloc bloc;
   double _parallaxOffset = 0.0;
 
   @override
@@ -40,6 +42,7 @@ class _StoryDetailScreenState extends State<StoryDetailScreen> {
 
   @override
   Widget build(BuildContext context) {
+    bloc = BlocProvider.of(context).storyBloc;
     return WillPopScope(
       // 禁掉ios的滑动退出
       onWillPop: () async => !Platform.isIOS,
@@ -72,5 +75,13 @@ class _StoryDetailScreenState extends State<StoryDetailScreen> {
         ),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+
+    bloc.showMoreOperate.clear();
+    super.dispose();
   }
 }

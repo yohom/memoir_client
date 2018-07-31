@@ -68,14 +68,17 @@ class Event<T> {
       // 不停地发送通知(但是值又是一样)的情况
       if (test != null) {
         if (!test(latest, data)) {
+          L.d('Event发送${data.runtimeType}数据: $data');
           _subject.add(data);
         }
       } else {
         if (data != latest) {
+          L.d('Event发送${data.runtimeType}数据: $data');
           _subject.add(data);
         }
       }
     } else {
+      L.d('Event发送${data.runtimeType}数据: $data');
       _subject.add(data);
     }
   }
@@ -88,8 +91,7 @@ class Event<T> {
 
   AsObservableFuture<T> addFuture(Future<T> source,
       {bool cancelOnError: true}) {
-    return Observable
-        .fromFuture((_subject
+    return Observable.fromFuture((_subject
               ..addStream(source.asStream(), cancelOnError: cancelOnError))
             .first)
         .first;

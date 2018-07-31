@@ -51,6 +51,11 @@ class FadeSlideTransition extends StatefulWidget {
   ///
   final SlideDirection direction;
 
+  ///
+  /// 是否立即执行动画
+  ///
+  final bool immediately;
+
   FadeSlideTransition({
     Key key,
     this.originOffset = const Offset(0.0, 30.0),
@@ -60,6 +65,7 @@ class FadeSlideTransition extends StatefulWidget {
     this.slideCurve = Curves.decelerate,
     this.slideReverseCurve = Curves.decelerate,
     this.direction = SlideDirection.vertical,
+    this.immediately = true,
     this.builder,
   }) : super(key: key);
 
@@ -93,9 +99,11 @@ class _FadeInSlideTransitionState extends State<FadeSlideTransition>
       curve: widget.fadeCurve,
     );
 
-    Observable.just('')
-        .delay(widget.delay)
-        .listen((_) => _controller.forward());
+    if (widget.immediately) {
+      Observable.just('')
+          .delay(widget.delay)
+          .listen((_) => _controller.forward());
+    }
 
     super.initState();
   }
@@ -117,10 +125,7 @@ class _FadeInSlideTransitionState extends State<FadeSlideTransition>
                   ? -_slideAnimation.value * widget.originOffset.dy
                   : 0.0,
             ),
-            child: Opacity(
-              opacity: _fadeAnimation.value,
-              child: child,
-            ),
+            child: Opacity(opacity: _fadeAnimation.value, child: child),
           );
         },
       ),
