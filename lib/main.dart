@@ -20,8 +20,9 @@ class MemoirApp extends StatelessWidget {
         title: 'Flutter Demo',
         theme: ThemeData(
           primarySwatch: Colors.blue,
-          backgroundColor: backgroundColor,
-          buttonColor: buttonColor,
+          backgroundColor: kBackgroundColor,
+          primaryColor: kColorPrimary,
+          buttonColor: kButtonColor,
         ),
         home: HomeScreen(),
       ),

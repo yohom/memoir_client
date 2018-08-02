@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:memoir/app/constants.dart';
+import 'package:memoir/app/res/color.dart';
 
 ///
 /// 背景
@@ -16,7 +17,7 @@ class Background extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Color(0xfff78190), Color(0xfff36aa0)],
+            colors: [kGradientStartColor, kGradientEndColor],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           ),

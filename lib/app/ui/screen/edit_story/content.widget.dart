@@ -1,39 +1,38 @@
 import 'package:flutter/material.dart';
-import 'package:memoir/app/ui/animation/fade_slide.transition.dart';
-import 'package:memoir/app/ui/screen/edit_story/lets_do_it.widget.dart';
-import 'package:memoir/app/ui/screen/edit_story/select_date.widget.dart';
-import 'package:memoir/app/ui/widget/avatar.widget.dart';
+import 'package:memoir/app/ui/screen/edit_story/greeting/greeting.widget.dart';
+import 'package:memoir/app/ui/screen/edit_story/select_mood/select_mood.widget.dart';
+import 'package:memoir/framework/ui.dart';
 
-///
-/// 内容
-///
 class Content extends StatelessWidget {
-  const Content({
+  final _controller = PageController();
+
+  Content({
     Key key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: <Widget>[
-        Avatar(),
-        FadeSlideTransition(
-          delay: Duration(milliseconds: 300),
-          builder: (context, controller) {
-            return Text(
-              'Hello Hello Hello Hello Hello',
-              style: Theme.of(context)
-                  .textTheme
-                  .headline
-                  .copyWith(color: Colors.white70),
-            );
-          },
-        ),
-        SelectDate(),
-        LetsDoIt(),
-      ],
+    final bloc = BlocProvider.of(context).storyBloc;
+    return StreamBuilder<int>(
+      stream: bloc.scrollPage.stream,
+      builder: (_, ss) {
+        if (ss.hasData) {
+          _controller.animateToPage(
+            ss.data,
+            duration: Duration(milliseconds: 1000),
+            curve: Curves.decelerate,
+          );
+        }
+        return PageView(
+          physics: NeverScrollableScrollPhysics(),
+          controller: _controller,
+          scrollDirection: Axis.vertical,
+          children: <Widget>[
+            Greeting(),
+            SelectMood(),
+          ],
+        );
+      },
     );
   }
 }

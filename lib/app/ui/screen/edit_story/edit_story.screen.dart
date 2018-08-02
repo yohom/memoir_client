@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:memoir/app/ui/screen/edit_story/animated_avatar.widget.dart';
 import 'package:memoir/app/ui/screen/edit_story/background.widget.dart';
 import 'package:memoir/app/ui/screen/edit_story/content.widget.dart';
 import 'package:memoir/app/ui/widget/widget.export.dart';
@@ -13,6 +14,7 @@ class EditStoryScreen extends StatelessWidget {
           Background(),
           Close(),
           Content(),
+          AnimatedAvatar(),
         ],
       ),
     );

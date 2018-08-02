@@ -30,6 +30,11 @@ class StoryBloc {
   final showMoreOperate = Event<bool>(seedValue: false, isBehavior: true);
 
   ///
+  /// letsDoIt
+  ///
+  final scrollPage = Event<int>(seedValue: 0);
+
+  ///
   /// 获取story列表
   ///
   Future<List<Story>> performFetchStoryList() {

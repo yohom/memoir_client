@@ -1,3 +1,7 @@
 import 'package:flutter/material.dart';
 
-final buttonColor = Color.lerp(Color(0XFF7A73C1), Color(0XFF868CE8), 1.0);
+const kGradientStartColor = Color(0XFF8288E0);
+const kGradientEndColor = Color(0XFF7871C0);
+const kColorPrimary = kGradientStartColor;
+const kColorMinor = Color(0xFF99D3A7);
+const kButtonColor = kColorPrimary;

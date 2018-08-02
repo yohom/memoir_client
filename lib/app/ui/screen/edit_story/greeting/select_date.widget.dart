@@ -15,9 +15,10 @@ class SelectDate extends StatelessWidget {
               heightFactor: 2.0,
               child: Text(
                 'Story Date',
-                style: Theme.of(context).textTheme.display2.copyWith(
-                      color: Colors.blue.withOpacity(0.3),
-                      letterSpacing: 5.0,
+                style: Theme.of(context).textTheme.display3.copyWith(
+                      color: Color(0XFF7775C5),
+                      fontFamily: 'Quicksand',
+                      fontWeight: FontWeight.bold,
                     ),
               ),
             );
@@ -31,10 +32,10 @@ class SelectDate extends StatelessWidget {
               children: <Widget>[
                 Text(
                   'July 13',
-                  style: Theme.of(context)
-                      .textTheme
-                      .subhead
-                      .copyWith(color: Colors.white),
+                  style: Theme.of(context).textTheme.headline.copyWith(
+                        color: Colors.white.withOpacity(0.7),
+                        fontFamily: 'bahij-janna',
+                      ),
                 ),
                 Text(
                   'YESTERDAY',

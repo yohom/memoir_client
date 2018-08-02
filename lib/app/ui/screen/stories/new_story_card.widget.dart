@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:memoir/app/constants.dart';
+import 'package:memoir/app/res/color.dart';
 import 'package:memoir/app/ui/screen/edit_story/edit_story.screen.dart';
 import 'package:memoir/framework/res.dart';
-import 'package:memoir/framework/ui.dart';
 import 'package:memoir/framework/utils.dart';
 
 class NewStoryCard extends StatelessWidget {
@@ -32,7 +32,7 @@ class NewStoryCard extends StatelessWidget {
               child: Container(
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
-                    colors: [Color(0xfff97087), Color(0xfff36aa0)],
+                    colors: [kGradientStartColor, kGradientEndColor],
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
                   ),
@@ -42,7 +42,8 @@ class NewStoryCard extends StatelessWidget {
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Icon(Icons.add, color: Colors.white, size: 100.0),
+                Icon(Icons.mode_edit, color: Colors.white, size: 100.0),
+                SPACE_BIG,
                 Text('ADD NEW STORY', style: TextStyle(color: Colors.white)),
               ],
             ),
