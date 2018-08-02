@@ -22,7 +22,7 @@ class Avatar extends StatelessWidget {
           elevation: elevation_big,
           borderRadius: BorderRadius.circular(90.0),
           child: CircleAvatar(
-            backgroundImage: AssetImage('assets/rabbit.png'),
+            backgroundImage: AssetImage('assets/avatar.png'),
           ),
         ),
       ),
