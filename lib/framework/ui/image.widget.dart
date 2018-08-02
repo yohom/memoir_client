@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:memoir/framework/ui.dart';
 
 class ImageWidget extends StatelessWidget {
   final String imageUrl;
@@ -13,8 +11,8 @@ class ImageWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CachedNetworkImage(
-      imageUrl: imageUrl,
+    return Image.network(
+      imageUrl,
       fit: fit,
     );
   }

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:memoir/app/ui/animation/show_up.transition.dart';
 import 'package:memoir/framework/res.dart';
-import 'package:memoir/framework/ui.dart';
 
-@deprecated
 class LetsDoIt extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:memoir/app/constants.dart';
-import 'package:memoir/framework/ui.dart';
 
 ///
 /// 背景
 ///
-@deprecated
 class Background extends StatelessWidget {
   const Background({
     Key key,
