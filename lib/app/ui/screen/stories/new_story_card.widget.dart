@@ -18,7 +18,6 @@ class NewStoryCard extends StatelessWidget {
     return GestureDetector(
       onTap: () => Router.navigate(context, EditStoryScreen()),
       child: Card(
-        color: Colors.pinkAccent,
         elevation: elevation,
         margin: EdgeInsets.only(bottom: space_huge, right: space_normal),
         shape: RoundedRectangleBorder(
@@ -26,6 +25,7 @@ class NewStoryCard extends StatelessWidget {
         ),
         child: Stack(
           alignment: AlignmentDirectional.center,
+          fit: StackFit.expand,
           children: <Widget>[
             Hero(
               tag: NEW_STORY_CARD_TO_EDIT_STORY,
@@ -39,10 +39,19 @@ class NewStoryCard extends StatelessWidget {
                 ),
               ),
             ),
+            Image.asset(
+              'assets/images/new-entry-bg.png',
+              fit: BoxFit.cover,
+              color: Colors.white10,
+            ),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Icon(Icons.mode_edit, color: Colors.white, size: 100.0),
+                Icon(
+                  IconData(0xe97b, fontFamily: 'ReflectlyIcons'),
+                  color: Colors.white,
+                  size: 100.0,
+                ),
                 SPACE_BIG,
                 Text('ADD NEW STORY', style: TextStyle(color: Colors.white)),
               ],

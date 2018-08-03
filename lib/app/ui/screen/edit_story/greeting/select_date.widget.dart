@@ -33,8 +33,9 @@ class SelectDate extends StatelessWidget {
                 Text(
                   'July 13',
                   style: Theme.of(context).textTheme.headline.copyWith(
-                        color: Colors.white.withOpacity(0.7),
-                        fontFamily: 'bahij-janna',
+                        color: Colors.white.withOpacity(0.6),
+                        fontFamily: 'Avenir',
+                        fontWeight: FontWeight.bold,
                       ),
                 ),
                 Text(

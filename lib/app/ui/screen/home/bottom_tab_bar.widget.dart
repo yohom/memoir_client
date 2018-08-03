@@ -24,21 +24,21 @@ class BottomTabBar extends StatelessWidget {
             tabs: [
               IconButton(
                 icon: Icon(
-                  Icons.edit,
+                  IconData(0xe97d, fontFamily: 'ReflectlyIcons'),
                   color: Colors.black,
                 ),
                 onPressed: () {},
               ),
               IconButton(
                 icon: Icon(
-                  Icons.history,
+                  IconData(0xe945, fontFamily: 'ReflectlyIcons'),
                   color: Colors.black,
                 ),
                 onPressed: () {},
               ),
               IconButton(
                 icon: Icon(
-                  Icons.add,
+                  IconData(0xe9a0, fontFamily: 'ReflectlyIcons'),
                   color: Colors.black,
                 ),
                 onPressed: () {},

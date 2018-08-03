@@ -19,8 +19,8 @@ class Content extends StatelessWidget {
         if (ss.hasData && _controller.hasClients) {
           _controller.animateToPage(
             ss.data,
-            duration: Duration(milliseconds: 1000),
-            curve: Curves.decelerate,
+            duration: Duration(milliseconds: 1500),
+            curve: Curves.ease,
           );
         }
         return PageView(

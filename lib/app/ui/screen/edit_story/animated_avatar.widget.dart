@@ -16,8 +16,8 @@ class AnimatedAvatar extends StatelessWidget {
           duration: Duration(milliseconds: 800),
           curve: Curves.ease,
           margin: EdgeInsets.only(
-            top: isFirstPage ? space_giant : space_big,
-            left: isFirstPage ? 0.0 : space_big,
+            top: isFirstPage ? space_giant : space_huge,
+            left: isFirstPage ? 0.0 : space_huge,
           ),
           alignment: isFirstPage
               ? AlignmentDirectional.topCenter

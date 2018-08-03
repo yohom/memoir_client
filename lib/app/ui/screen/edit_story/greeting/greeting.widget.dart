@@ -17,7 +17,7 @@ class Greeting extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: <Widget>[
-        SafeArea(child: SizedBox(width: 80.0, height: 80.0)),
+        SizedBox(width: 80.0, height: 80.0),
         FractionallySizedBox(
           widthFactor: 0.9,
           child: FadeSlideTransition(
