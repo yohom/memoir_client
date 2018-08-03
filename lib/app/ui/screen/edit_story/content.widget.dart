@@ -16,7 +16,7 @@ class Content extends StatelessWidget {
     return StreamBuilder<int>(
       stream: bloc.scrollPage.stream,
       builder: (_, ss) {
-        if (ss.hasData) {
+        if (ss.hasData && _controller.hasClients) {
           _controller.animateToPage(
             ss.data,
             duration: Duration(milliseconds: 1000),

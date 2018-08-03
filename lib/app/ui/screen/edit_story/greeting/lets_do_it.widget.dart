@@ -13,7 +13,7 @@ class LetsDoIt extends StatelessWidget {
     final bloc = BlocProvider.of(context).storyBloc;
     final theme = Theme.of(context);
     return ShowUpTransition(
-      delay: 1800,
+      delay: 1300,
       child: FractionallySizedBox(
         widthFactor: 0.8,
         child: RaisedButton(
