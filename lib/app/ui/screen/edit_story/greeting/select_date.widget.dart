@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:memoir/app/ui/animation/fade_slide.transition.dart';
+import 'package:memoir/framework/res.dart';
 
 class SelectDate extends StatelessWidget {
   @override
@@ -38,12 +39,13 @@ class SelectDate extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                 ),
+                SPACE_NORMAL,
                 Text(
                   'YESTERDAY',
-                  style: Theme.of(context)
-                      .textTheme
-                      .subhead
-                      .copyWith(color: Colors.white70),
+                  style: Theme.of(context).textTheme.subhead.copyWith(
+                        color: Colors.white70,
+                        fontWeight: FontWeight.w300,
+                      ),
                 ),
               ],
             );

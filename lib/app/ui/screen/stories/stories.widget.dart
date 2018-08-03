@@ -14,7 +14,7 @@ class Stories extends StatelessWidget {
     final bloc = BlocProvider.of(context).storyBloc;
     return Expanded(
       child: Padding(
-        padding: EdgeInsets.only(bottom: bottom_bar_height),
+        padding: EdgeInsets.only(bottom: kBottomBarHeight),
         child: SafeArea(
           child: StreamWidget<List<Story>>(
             stream: bloc.storyList

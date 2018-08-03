@@ -12,15 +12,14 @@ class BottomTabBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: SizedBox(
-        height: bottom_bar_height,
+        height: kBottomBarHeight,
         child: Card(
-          margin: EdgeInsets.all(space_normal),
-          elevation: 4.0,
+          margin: EdgeInsets.all(space_small),
+          elevation: elevation_normal,
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
           child: TabBar(
             indicatorSize: TabBarIndicatorSize.label,
-            indicatorWeight: 4.0,
             tabs: [
               IconButton(
                 icon: Icon(

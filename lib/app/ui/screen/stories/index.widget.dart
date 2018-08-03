@@ -14,10 +14,11 @@ class Index extends StatelessWidget {
       children: <Widget>[
         Text(
           'Your Stories',
-          style: Theme.of(context)
-              .textTheme
-              .display1
-              .copyWith(fontFamily: 'BareunDotum', color: Colors.black),
+          style: Theme.of(context).textTheme.display1.copyWith(
+                fontFamily: 'Avenir',
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+              ),
         ),
         SizedBox(width: 100.0, child: Divider(height: space_huge)),
         SPACE_NORMAL,

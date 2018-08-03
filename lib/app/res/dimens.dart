@@ -1,1 +1,1 @@
-const bottom_bar_height = 80.0;
+const kBottomBarHeight = 64.0;
