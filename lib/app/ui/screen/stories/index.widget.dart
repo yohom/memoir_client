@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:memoir/app/ui/widget/fonted_text.dart';
 import 'package:memoir/framework/res.dart';
 import 'package:memoir/framework/ui.dart';
 
@@ -12,10 +13,9 @@ class Index extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Text(
+        AvenirText(
           'Your Stories',
           style: Theme.of(context).textTheme.display1.copyWith(
-                fontFamily: 'Avenir',
                 fontWeight: FontWeight.bold,
                 color: Colors.black,
               ),
@@ -29,10 +29,7 @@ class Index extends StatelessWidget {
         SPACE_BIG,
         Text(
           '# Favorites',
-          style: Theme.of(context)
-              .textTheme
-              .subhead
-              .copyWith(fontFamily: 'BareunDotum'),
+          style: Theme.of(context).textTheme.subhead,
         ),
       ],
     );

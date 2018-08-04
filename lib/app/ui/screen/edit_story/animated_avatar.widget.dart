@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:memoir/app/ui/screen/edit_story/edit_story.screen.dart';
 import 'package:memoir/app/ui/widget/widget.export.dart';
 import 'package:memoir/framework/res.dart';
 import 'package:memoir/framework/ui.dart';
@@ -13,7 +14,7 @@ class AnimatedAvatar extends StatelessWidget {
       builder: (_, ss) {
         final isFirstPage = ss.data == 0;
         return AnimatedContainer(
-          duration: Duration(milliseconds: 800),
+          duration: kPageChangeDuration,
           curve: Curves.ease,
           margin: EdgeInsets.only(
             top: isFirstPage ? space_giant : space_huge,

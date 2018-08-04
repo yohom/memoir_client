@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:memoir/app/ui/screen/edit_story/greeting/greeting.widget.dart';
-import 'package:memoir/app/ui/screen/edit_story/select_mood/select_mood.widget.dart';
+import 'package:memoir/app/ui/screen/edit_story/content/elaborate.widget.dart';
+import 'package:memoir/app/ui/screen/edit_story/content/what_made_today.widget.dart';
+import 'package:memoir/app/ui/screen/edit_story/edit_story.screen.dart';
+import 'package:memoir/app/ui/screen/edit_story/content/greeting.widget.dart';
+import 'package:memoir/app/ui/screen/edit_story/content/select_mood.widget.dart';
 import 'package:memoir/framework/ui.dart';
 
 class Content extends StatelessWidget {
@@ -19,7 +22,7 @@ class Content extends StatelessWidget {
         if (ss.hasData && _controller.hasClients) {
           _controller.animateToPage(
             ss.data,
-            duration: Duration(milliseconds: 1500),
+            duration: kPageChangeDuration,
             curve: Curves.ease,
           );
         }
@@ -30,6 +33,8 @@ class Content extends StatelessWidget {
           children: <Widget>[
             Greeting(),
             SelectMood(),
+            WhatMadeToday(),
+            Elaborate(),
           ],
         );
       },

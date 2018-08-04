@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:memoir/app/ui/screen/edit_story/animated_avatar.widget.dart';
 import 'package:memoir/app/ui/screen/edit_story/background.widget.dart';
-import 'package:memoir/app/ui/screen/edit_story/content.widget.dart';
+import 'package:memoir/app/ui/screen/edit_story/content/content.widget.dart';
 import 'package:memoir/app/ui/widget/widget.export.dart';
 import 'package:memoir/framework/utils.dart';
+
+const kPageChangeDuration = Duration(milliseconds: 800);
 
 class EditStoryScreen extends StatelessWidget {
   @override
