@@ -4,6 +4,7 @@ import 'package:memoir/app/ui/animation/show_up.transition.dart';
 import 'package:memoir/app/ui/widget/fonted_text.dart';
 import 'package:memoir/framework/res.dart';
 import 'package:memoir/framework/ui.dart';
+import 'package:memoir/framework/utils.dart';
 
 ///
 /// 内容
@@ -15,6 +16,8 @@ class Greeting extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    L.i(context.toString());
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.spaceAround,

@@ -10,6 +10,8 @@ import 'package:memoir/framework/utils.dart';
 class SelectMood extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    L.i(context.toString());
+
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: <Widget>[
@@ -31,7 +33,7 @@ class _RateYourToday extends StatefulWidget {
 
 class _RateYourTodayState extends State<_RateYourToday> {
   double _sliderValue = 5.0;
-  IconData _iconData = ReflectlyIcons.work;
+  IconData _iconData = ReflectlyIcons.completelyOk;
   String _moodDesc = kCompletelyOk;
 
   @override
@@ -50,27 +52,8 @@ class _RateYourTodayState extends State<_RateYourToday> {
           max: 10.0,
           divisions: 4,
           value: _sliderValue,
-          onChanged: (value) {
-            setState(() {
-              _sliderValue = value;
-              if (value == 0.0) {
-                _iconData = ReflectlyIcons.reallyTerrible;
-                _moodDesc = krReallyTerrible;
-              } else if (value == 2.5) {
-                _iconData = ReflectlyIcons.somewhatBad;
-                _moodDesc = kSomewhatBad;
-              } else if (value == 5.0) {
-                _iconData = ReflectlyIcons.completelyOk;
-                _moodDesc = kCompletelyOk;
-              } else if (value == 7.5) {
-                _iconData = ReflectlyIcons.prettyGood;
-                _moodDesc = kPrettyGood;
-              } else if (value == 10.0) {
-                _iconData = ReflectlyIcons.superAwesome;
-                _moodDesc = kSuperAwesome;
-              }
-            });
-          },
+          onChanged: _onSliderChange,
+          onChangeEnd: _onSliderChangeEnd,
         ),
         SPACE_BIG,
         Padding(
@@ -98,5 +81,32 @@ class _RateYourTodayState extends State<_RateYourToday> {
         ),
       ],
     );
+  }
+
+  void _onSliderChange(double value) {
+    setState(() {
+      _sliderValue = value;
+      if (value == 0.0) {
+        _iconData = ReflectlyIcons.reallyTerrible;
+        _moodDesc = krReallyTerrible;
+      } else if (value == 2.5) {
+        _iconData = ReflectlyIcons.somewhatBad;
+        _moodDesc = kSomewhatBad;
+      } else if (value == 5.0) {
+        _iconData = ReflectlyIcons.completelyOk;
+        _moodDesc = kCompletelyOk;
+      } else if (value == 7.5) {
+        _iconData = ReflectlyIcons.prettyGood;
+        _moodDesc = kPrettyGood;
+      } else if (value == 10.0) {
+        _iconData = ReflectlyIcons.superAwesome;
+        _moodDesc = kSuperAwesome;
+      }
+    });
+  }
+
+  void _onSliderChangeEnd(double value) {
+    final bloc = BlocProvider.of(context).storyBloc;
+    bloc.scrollPage.add(2);
   }
 }
