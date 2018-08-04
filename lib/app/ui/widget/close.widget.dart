@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:memoir/framework/res.dart';
-import 'package:memoir/framework/ui.dart';
 
 ///
 /// 关闭按钮

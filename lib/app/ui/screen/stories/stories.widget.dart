@@ -10,6 +10,8 @@ import 'package:memoir/framework/ui.dart';
 import 'package:memoir/framework/utils.dart';
 
 class Stories extends StatelessWidget {
+  const Stories({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     L.i(context.toString());

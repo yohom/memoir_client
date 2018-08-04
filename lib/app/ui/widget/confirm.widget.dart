@@ -9,7 +9,7 @@ class Confirm extends StatelessWidget {
   final VoidCallback onCancel;
   final double heightFactor;
 
-  Confirm({
+  const Confirm({
     Key key,
     this.onCancel,
     this.heightFactor = 0.4,

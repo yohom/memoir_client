@@ -3,14 +3,9 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:memoir/app/bloc/story_bloc.dart';
 import 'package:memoir/app/model/bean/story.dart';
-import 'package:memoir/app/ui/animation/fade_slide.transition.dart';
-import 'package:memoir/app/ui/widget/mood.widget.dart';
-import 'package:memoir/app/ui/screen/stories/story_date.widget.dart';
-import 'package:memoir/app/ui/screen/stories/story_title.widget.dart';
 import 'package:memoir/app/ui/screen/story_detail/content.widget.dart';
 import 'package:memoir/app/ui/screen/story_detail/operate_group/operate_gourp.widget.dart';
 import 'package:memoir/app/ui/screen/story_detail/summary.widget.dart';
-import 'package:memoir/framework/res.dart';
 import 'package:memoir/framework/ui.dart';
 import 'package:memoir/framework/utils.dart';
 

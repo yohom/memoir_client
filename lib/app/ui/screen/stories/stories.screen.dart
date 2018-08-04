@@ -6,13 +6,15 @@ import 'package:memoir/framework/res.dart';
 import 'package:memoir/framework/utils.dart';
 
 class StoriesScreen extends StatelessWidget {
+  const StoriesScreen({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     L.i(context.toString());
 
-    return Scaffold(
-      backgroundColor: Theme.of(context).backgroundColor,
-      body: Stack(
+    return Container(
+      color: Theme.of(context).backgroundColor,
+      child: Stack(
         children: <Widget>[
           Column(
             children: <Widget>[

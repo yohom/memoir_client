@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:memoir/app/constants.dart';
+import 'package:memoir/app/res/drawable.dart';
 import 'package:memoir/app/ui/widget/question.widget.dart';
 import 'package:memoir/app/ui/widget/step_indicator.widget.dart';
-import 'package:memoir/app/res/drawable.dart';
 import 'package:memoir/framework/res.dart';
 import 'package:memoir/framework/ui.dart';
 import 'package:memoir/framework/utils.dart';
 
 class SelectMood extends StatelessWidget {
+  const SelectMood({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     L.i(context.toString());
@@ -38,6 +40,8 @@ class _RateYourTodayState extends State<_RateYourToday> {
 
   @override
   Widget build(BuildContext context) {
+    L.i(context.toString());
+
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[

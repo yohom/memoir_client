@@ -11,7 +11,7 @@ class BottomTabBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    L.i('${context.toString()}');
+    L.i(context.toString());
 
     return DefaultTabController(
       length: 3,

@@ -3,13 +3,14 @@ import 'package:memoir/app/constants.dart';
 import 'package:memoir/app/res/color.dart';
 import 'package:memoir/app/ui/screen/edit_story/edit_story.screen.dart';
 import 'package:memoir/app/res/drawable.dart';
+import 'package:memoir/app/ui/widget/fonted_text.dart';
 import 'package:memoir/framework/res.dart';
 import 'package:memoir/framework/utils.dart';
 
 class NewStoryCard extends StatelessWidget {
   final double elevation;
 
-  NewStoryCard({
+  const NewStoryCard({
     Key key,
     @required this.elevation,
   }) : super(key: key);
@@ -52,7 +53,10 @@ class NewStoryCard extends StatelessWidget {
                   size: 100.0,
                 ),
                 SPACE_BIG,
-                Text('ADD NEW STORY', style: TextStyle(color: Colors.white)),
+                AvenirText(
+                  'ADD NEW STORY',
+                  style: TextStyle(color: Colors.white),
+                ),
               ],
             ),
           ],

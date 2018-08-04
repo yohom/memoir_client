@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:memoir/app/ui/widget/fonted_text.dart';
 import 'package:memoir/framework/res.dart';
-import 'package:memoir/framework/ui.dart';
+import 'package:memoir/framework/utils.dart';
 
 ///
 /// Page的第一页
 ///
 class Index extends StatelessWidget {
+  const Index({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
+    L.i(context.toString());
+
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.start,

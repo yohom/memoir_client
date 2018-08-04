@@ -5,7 +5,6 @@ import 'package:memoir/app/ui/route/dialog.route.dart';
 import 'package:memoir/app/ui/screen/edit_story/edit_story.screen.dart';
 import 'package:memoir/app/ui/screen/story_detail/operate_group/operate.widget.dart';
 import 'package:memoir/app/ui/screen/story_detail/operate_group/update_cover.widget.dart';
-import 'package:memoir/app/ui/widget/widget.export.dart';
 import 'package:memoir/framework/res.dart';
 import 'package:memoir/framework/ui.dart';
 import 'package:memoir/framework/utils.dart';

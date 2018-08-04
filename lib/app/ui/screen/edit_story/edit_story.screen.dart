@@ -8,6 +8,8 @@ import 'package:memoir/framework/utils.dart';
 const kPageChangeDuration = Duration(milliseconds: 800);
 
 class EditStoryScreen extends StatelessWidget {
+  const EditStoryScreen({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -5,6 +5,8 @@ import 'package:memoir/framework/res.dart';
 import 'package:memoir/framework/ui.dart';
 
 class AnimatedAvatar extends StatelessWidget {
+  const AnimatedAvatar({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final bloc = BlocProvider.of(context).storyBloc;

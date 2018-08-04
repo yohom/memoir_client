@@ -15,7 +15,7 @@ class HistoryStoryCard extends StatelessWidget {
   final Story story;
   final double elevation;
 
-  HistoryStoryCard({
+  const HistoryStoryCard({
     Key key,
     @required this.story,
     @required this.elevation,
@@ -23,6 +23,8 @@ class HistoryStoryCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    L.i('${context.toString()}: ${story.title}');
+
     return GestureDetector(
       onTap: () {
         Router.navigate(context, StoryDetailScreen(story: story));
