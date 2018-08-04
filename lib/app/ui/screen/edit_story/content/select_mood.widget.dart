@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:memoir/app/constants.dart';
 import 'package:memoir/app/ui/widget/question.widget.dart';
 import 'package:memoir/app/ui/widget/step_indicator.widget.dart';
-import 'package:memoir/app/utils/icon_data.dart';
+import 'package:memoir/app/res/drawable.dart';
 import 'package:memoir/framework/res.dart';
 import 'package:memoir/framework/ui.dart';
 import 'package:memoir/framework/utils.dart';

@@ -54,5 +54,7 @@ class StoryBloc {
     storyList.close();
     pageChange.close();
     newStory.close();
+    showMoreOperate.close();
+    scrollPage.close();
   }
 }

@@ -3,7 +3,7 @@ import 'package:memoir/app/constants.dart';
 import 'package:memoir/app/ui/widget/question.widget.dart';
 import 'package:memoir/app/ui/widget/step_indicator.widget.dart';
 import 'package:memoir/app/ui/widget/thing.widget.dart';
-import 'package:memoir/app/utils/icon_data.dart';
+import 'package:memoir/app/res/drawable.dart';
 import 'package:memoir/framework/res.dart';
 
 class WhatMadeToday extends StatelessWidget {

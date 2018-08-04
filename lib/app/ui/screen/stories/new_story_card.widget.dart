@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:memoir/app/constants.dart';
 import 'package:memoir/app/res/color.dart';
 import 'package:memoir/app/ui/screen/edit_story/edit_story.screen.dart';
+import 'package:memoir/app/res/drawable.dart';
 import 'package:memoir/framework/res.dart';
 import 'package:memoir/framework/utils.dart';
 
@@ -39,16 +40,12 @@ class NewStoryCard extends StatelessWidget {
                 ),
               ),
             ),
-            Image.asset(
-              'assets/images/new-entry-bg.png',
-              fit: BoxFit.cover,
-              color: Colors.white10,
-            ),
+            Images.newEntryBg,
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Icon(
-                  IconData(0xe97b, fontFamily: 'ReflectlyIcons'),
+                  ReflectlyIcons.addNewStory,
                   color: Colors.white,
                   size: 100.0,
                 ),
