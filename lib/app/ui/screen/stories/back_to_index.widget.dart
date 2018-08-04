@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:memoir/app/model/bean/page_change.dart';
 import 'package:memoir/framework/res.dart';
 import 'package:memoir/framework/ui.dart';
-import 'package:memoir/framework/utils.dart';
 
 class BackToIndex extends StatelessWidget {
   const BackToIndex({
@@ -11,8 +10,6 @@ class BackToIndex extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    L.i(context.toString());
-
     final bloc = BlocProvider.of(context).storyBloc;
     return SafeArea(
       child: StreamWidget<PageChange>(

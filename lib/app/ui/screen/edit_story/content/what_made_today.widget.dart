@@ -3,15 +3,12 @@ import 'package:memoir/app/res/drawable.dart';
 import 'package:memoir/app/ui/widget/question.widget.dart';
 import 'package:memoir/app/ui/widget/step_indicator.widget.dart';
 import 'package:memoir/app/ui/widget/thing.widget.dart';
-import 'package:memoir/framework/utils.dart';
 
 class WhatMadeToday extends StatelessWidget {
   const WhatMadeToday({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    L.i(context.toString());
-
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: <Widget>[

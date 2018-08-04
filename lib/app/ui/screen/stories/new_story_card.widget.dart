@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:memoir/app/constants.dart';
 import 'package:memoir/app/res/color.dart';
-import 'package:memoir/app/ui/screen/edit_story/edit_story.screen.dart';
 import 'package:memoir/app/res/drawable.dart';
+import 'package:memoir/app/ui/screen/edit_story/edit_story.screen.dart';
 import 'package:memoir/app/ui/widget/fonted_text.dart';
 import 'package:memoir/framework/res.dart';
 import 'package:memoir/framework/utils.dart';
@@ -17,8 +17,6 @@ class NewStoryCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    L.i(context.toString());
-
     return GestureDetector(
       onTap: () => Router.navigate(context, EditStoryScreen()),
       child: Card(

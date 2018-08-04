@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:memoir/app/res/dimens.dart';
 import 'package:memoir/framework/res.dart';
-import 'package:memoir/framework/ui.dart';
-import 'package:memoir/framework/utils.dart';
 
 class BottomTabBar extends StatelessWidget {
   const BottomTabBar({
@@ -11,8 +9,6 @@ class BottomTabBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    L.i(context.toString());
-
     return DefaultTabController(
       length: 3,
       child: SafeArea(

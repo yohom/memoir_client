@@ -3,15 +3,12 @@ import 'package:memoir/app/ui/widget/fonted_text.dart';
 import 'package:memoir/app/ui/widget/question.widget.dart';
 import 'package:memoir/app/ui/widget/step_indicator.widget.dart';
 import 'package:memoir/framework/res.dart';
-import 'package:memoir/framework/utils.dart';
 
 class Elaborate extends StatelessWidget {
   const Elaborate({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    L.i(context.toString());
-
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: <Widget>[

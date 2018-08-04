@@ -1,4 +1,7 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:memoir/app/model/api.dart';
 import 'package:memoir/app/model/bean/page_change.dart';
 import 'package:memoir/app/model/bean/story.dart';
 import 'package:memoir/app/res/dimens.dart';
@@ -7,22 +10,34 @@ import 'package:memoir/app/ui/screen/stories/index.widget.dart';
 import 'package:memoir/app/ui/screen/stories/new_story_card.widget.dart';
 import 'package:memoir/framework/res.dart';
 import 'package:memoir/framework/ui.dart';
-import 'package:memoir/framework/utils.dart';
 
-class Stories extends StatelessWidget {
+class Stories extends StatefulWidget {
   const Stories({Key key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    L.i(context.toString());
+  _StoriesState createState() {
+    return _StoriesState();
+  }
+}
 
-    final bloc = BlocProvider.of(context).storyBloc;
+class _StoriesState extends State<Stories> {
+  Future<List<Story>> _storyList;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _storyList = Api.fetchStoryList({});
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Expanded(
       child: Padding(
         padding: EdgeInsets.only(bottom: kBottomBarHeight),
         child: SafeArea(
           child: FutureWidget<List<Story>>(
-            future: bloc.storyList.addFuture(bloc.performFetchStoryList()),
+            future: _storyList,
             builder: (data) => _StoryPageView(data),
           ),
         ),

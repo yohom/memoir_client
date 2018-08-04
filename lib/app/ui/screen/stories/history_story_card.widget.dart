@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:memoir/app/model/bean/story.dart';
-import 'package:memoir/app/ui/widget/mood.widget.dart';
 import 'package:memoir/app/ui/screen/stories/story_date.widget.dart';
 import 'package:memoir/app/ui/screen/stories/story_title.widget.dart';
 import 'package:memoir/app/ui/screen/story_detail/story_detail.screen.dart';
+import 'package:memoir/app/ui/widget/mood.widget.dart';
 import 'package:memoir/framework/res.dart';
 import 'package:memoir/framework/ui.dart';
 import 'package:memoir/framework/utils.dart';
@@ -23,8 +23,6 @@ class HistoryStoryCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    L.i('${context.toString()}: ${story.title}');
-
     return GestureDetector(
       onTap: () {
         Router.navigate(context, StoryDetailScreen(story: story));
