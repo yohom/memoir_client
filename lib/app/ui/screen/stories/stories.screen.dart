@@ -3,10 +3,13 @@ import 'package:memoir/app/ui/screen/stories/back_to_index.widget.dart';
 import 'package:memoir/app/ui/screen/stories/stories.widget.dart';
 import 'package:memoir/app/ui/widget/avatar.widget.dart';
 import 'package:memoir/framework/res.dart';
+import 'package:memoir/framework/utils.dart';
 
 class StoriesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    L.i(context.toString());
+
     return Scaffold(
       backgroundColor: Theme.of(context).backgroundColor,
       body: Stack(

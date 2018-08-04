@@ -7,18 +7,20 @@ import 'package:memoir/app/ui/screen/stories/index.widget.dart';
 import 'package:memoir/app/ui/screen/stories/new_story_card.widget.dart';
 import 'package:memoir/framework/res.dart';
 import 'package:memoir/framework/ui.dart';
+import 'package:memoir/framework/utils.dart';
 
 class Stories extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    L.i(context.toString());
+
     final bloc = BlocProvider.of(context).storyBloc;
     return Expanded(
       child: Padding(
         padding: EdgeInsets.only(bottom: kBottomBarHeight),
         child: SafeArea(
-          child: StreamWidget<List<Story>>(
-            stream: bloc.storyList
-                .addStream(bloc.performFetchStoryList().asStream()),
+          child: FutureWidget<List<Story>>(
+            future: bloc.storyList.addFuture(bloc.performFetchStoryList()),
             builder: (data) => _StoryPageView(data),
           ),
         ),

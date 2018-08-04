@@ -16,28 +16,25 @@ class Content extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final bloc = BlocProvider.of(context).storyBloc;
-    return StreamBuilder<int>(
-      stream: bloc.scrollPage.stream,
-      builder: (_, ss) {
-        if (ss.hasData && _controller.hasClients) {
-          _controller.animateToPage(
-            ss.data,
-            duration: kPageChangeDuration,
-            curve: Curves.ease,
-          );
-        }
-        return PageView(
-          physics: NeverScrollableScrollPhysics(),
-          controller: _controller,
-          scrollDirection: Axis.vertical,
-          children: <Widget>[
-            Greeting(),
-            SelectMood(),
-            WhatMadeToday(),
-            Elaborate(),
-          ],
+    bloc.scrollPage.listen((page) {
+      if (_controller.hasClients) {
+        _controller.animateToPage(
+          page,
+          duration: kPageChangeDuration,
+          curve: Curves.ease,
         );
-      },
+      }
+    });
+    return PageView(
+      physics: NeverScrollableScrollPhysics(),
+      controller: _controller,
+      scrollDirection: Axis.vertical,
+      children: <Widget>[
+        Greeting(),
+        SelectMood(),
+        WhatMadeToday(),
+        Elaborate(),
+      ],
     );
   }
 }

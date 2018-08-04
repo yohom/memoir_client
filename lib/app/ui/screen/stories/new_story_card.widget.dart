@@ -16,6 +16,8 @@ class NewStoryCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    L.i(context.toString());
+
     return GestureDetector(
       onTap: () => Router.navigate(context, EditStoryScreen()),
       child: Card(
