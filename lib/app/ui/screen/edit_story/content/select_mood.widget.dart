@@ -14,7 +14,7 @@ class SelectMood extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: <Widget>[
-        SizedBox(height: 120.0),
+        SizedBox(height: 100.0),
         Question(question: 'How was your day today?'),
         Flexible(child: _RateYourToday()),
         StepIndicator(goToPage: 2, returnToPage: 0),

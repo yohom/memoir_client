@@ -15,23 +15,25 @@ class StepIndicator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final bloc = BlocProvider.of(context).storyBloc;
-    return Align(
-      alignment: AlignmentDirectional.centerEnd,
-      child: Padding(
-        padding: const EdgeInsets.only(right: space_big),
-        child: Column(
-          children: <Widget>[
-            IconButton(
-              icon: Icon(Icons.keyboard_arrow_up),
-              color: Colors.white.withOpacity(0.4),
-              onPressed: () => bloc.scrollPage.add(returnToPage),
-            ),
-            IconButton(
-              icon: Icon(Icons.keyboard_arrow_down),
-              color: Colors.white,
-              onPressed: () => bloc.scrollPage.add(goToPage),
-            ),
-          ],
+    return SafeArea(
+      child: Align(
+        alignment: AlignmentDirectional.centerEnd,
+        child: Padding(
+          padding: const EdgeInsets.only(right: space_big),
+          child: Column(
+            children: <Widget>[
+              IconButton(
+                icon: Icon(Icons.keyboard_arrow_up),
+                color: Colors.white.withOpacity(0.4),
+                onPressed: () => bloc.scrollPage.add(returnToPage),
+              ),
+              IconButton(
+                icon: Icon(Icons.keyboard_arrow_down),
+                color: Colors.white,
+                onPressed: () => bloc.scrollPage.add(goToPage),
+              ),
+            ],
+          ),
         ),
       ),
     );

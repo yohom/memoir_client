@@ -9,16 +9,19 @@ class Question extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(left: space_big),
-      child: Align(
-        alignment: AlignmentDirectional.centerStart,
-        child: QuicksandText(
-          question,
-          style: Theme.of(context)
-              .textTheme
-              .headline
-              .copyWith(color: Colors.white),
+    return SafeArea(
+      bottom: false,
+      child: Padding(
+        padding: const EdgeInsets.only(left: space_big),
+        child: Align(
+          alignment: AlignmentDirectional.centerStart,
+          child: QuicksandText(
+            question,
+            style: Theme.of(context)
+                .textTheme
+                .headline
+                .copyWith(color: Colors.white),
+          ),
         ),
       ),
     );

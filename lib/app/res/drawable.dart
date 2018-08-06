@@ -16,6 +16,9 @@ class ReflectlyIcons {
   static const exercise = IconData(0xe911, fontFamily: 'ReflectlyIcons');
   static const other = IconData(0xe989, fontFamily: 'ReflectlyIcons');
   static const addNewStory = IconData(0xe97b, fontFamily: 'ReflectlyIcons');
+  static const write = IconData(0xe97d, fontFamily: 'ReflectlyIcons');
+  static const listen = IconData(0xe945, fontFamily: 'ReflectlyIcons');
+  static const mine = IconData(0xe9a0, fontFamily: 'ReflectlyIcons');
 }
 
 class Images {

@@ -15,7 +15,7 @@ class Elaborate extends StatelessWidget {
         SizedBox(height: 120.0),
         Question(question: 'Would you like to elaborate on what happended?'),
         Flexible(child: YesOrNo()),
-        StepIndicator(goToPage: 3, returnToPage: 1),
+        StepIndicator(goToPage: 4, returnToPage: 2),
       ],
     );
   }
