@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:memoir/framework/ui.dart';
 import 'package:rxdart/rxdart.dart';
 
 typedef Widget Builder(BuildContext context, AnimationController controller);

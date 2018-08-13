@@ -28,6 +28,7 @@ class _ThingMadeToday extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
       child: GridView.count(
         shrinkWrap: true,
+        physics: NeverScrollableScrollPhysics(),
         crossAxisCount: 3,
         childAspectRatio: 1.3,
         children: <Widget>[
