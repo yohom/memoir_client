@@ -19,7 +19,7 @@ class StepIndicator extends StatelessWidget {
       child: Align(
         alignment: AlignmentDirectional.centerEnd,
         child: Padding(
-          padding: const EdgeInsets.only(right: space_big),
+          padding: const EdgeInsets.only(right: kSpaceBig),
           child: Column(
             children: <Widget>[
               IconButton(

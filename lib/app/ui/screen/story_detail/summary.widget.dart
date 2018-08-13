@@ -19,7 +19,7 @@ class Summary extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(space_big),
+      padding: const EdgeInsets.all(kSpaceBig),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[

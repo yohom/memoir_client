@@ -29,7 +29,7 @@ class Confirm extends StatelessWidget {
           widthFactor: 0.9,
           heightFactor: heightFactor,
           child: Card(
-            elevation: elevation_giant,
+            elevation: kElevationGiant,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(16.0),
             ),

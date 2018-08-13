@@ -20,7 +20,7 @@ class Operate extends StatelessWidget {
     return Operate(
       iconData: Icons.add,
       onTap: () {},
-      margin: EdgeInsets.all(space_normal),
+      margin: EdgeInsets.all(kSpaceNormal),
     );
   }
 
@@ -30,12 +30,12 @@ class Operate extends StatelessWidget {
       onTap: onTap,
       child: Card(
         margin: margin,
-        elevation: elevation_normal,
+        elevation: kElevationNormal,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(45.0),
         ),
         child: Padding(
-          padding: const EdgeInsets.all(space_normal),
+          padding: const EdgeInsets.all(kSpaceNormal),
           child: Icon(iconData),
         ),
       ),

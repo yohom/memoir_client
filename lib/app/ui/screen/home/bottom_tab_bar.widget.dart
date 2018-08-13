@@ -3,51 +3,72 @@ import 'package:memoir/app/res/dimens.dart';
 import 'package:memoir/app/res/drawable.dart';
 import 'package:memoir/app/utils/devices.dart';
 import 'package:memoir/framework/res.dart';
+import 'package:memoir/framework/ui/dot_indicator.widget.dart';
 
-class BottomTabBar extends StatelessWidget {
+class BottomTabBar extends StatefulWidget {
   const BottomTabBar({
     Key key,
   }) : super(key: key);
 
   @override
+  _BottomTabBarState createState() {
+    return _BottomTabBarState();
+  }
+}
+
+class _BottomTabBarState extends State<BottomTabBar>
+    with TickerProviderStateMixin {
+  TabController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = TabController(length: 3, vsync: this);
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 3,
-      child: Card(
-        margin: EdgeInsets.all(space_small),
-        elevation: elevation_normal,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.vertical(
-            top: Radius.circular(8.0),
-            bottom: Radius.circular(
-              Devices.isIPhoneX(context) ? 40.0 : 8.0,
-            ),
-          ),
-        ),
-        child: SafeArea(
-          top: false,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: space_small),
-            child: TabBar(
-              indicatorSize: TabBarIndicatorSize.label,
-              tabs: [
-                IconButton(
-                  icon: Icon(ReflectlyIcons.write, color: Colors.black),
-                  onPressed: () {},
-                ),
-                IconButton(
-                  icon: Icon(ReflectlyIcons.listen, color: Colors.black),
-                  onPressed: () {},
-                ),
-                IconButton(
-                  icon: Icon(ReflectlyIcons.mine, color: Colors.black),
-                  onPressed: () {},
-                ),
-              ],
-            ),
+    return Card(
+      margin: EdgeInsets.all(kSpaceSmall),
+      elevation: kElevationNormal,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(
+          top: Radius.circular(8.0),
+          bottom: Radius.circular(
+            Devices.isIPhoneX(context) ? 40.0 : 8.0,
           ),
         ),
       ),
+      child: SafeArea(
+        top: false,
+        child: TabBar(
+          controller: _controller,
+          indicator: DotTabIndicator(),
+          tabs: [
+            IconButton(
+              padding: EdgeInsets.all(kSpaceBig),
+              icon: Icon(ReflectlyIcons.write, color: Colors.black),
+              onPressed: () => _controller.animateTo(0),
+            ),
+            IconButton(
+              padding: EdgeInsets.all(kSpaceBig),
+              icon: Icon(ReflectlyIcons.listen, color: Colors.black),
+              onPressed: () => _controller.animateTo(1),
+            ),
+            IconButton(
+              padding: EdgeInsets.all(kSpaceBig),
+              icon: Icon(ReflectlyIcons.mine, color: Colors.black),
+              onPressed: () => _controller.animateTo(2),
+            ),
+          ],
+        ),
+      ),
     );
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
   }
 }

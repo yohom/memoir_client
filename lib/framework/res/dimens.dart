@@ -1,34 +1,34 @@
 import 'package:flutter/material.dart';
 
 //region space
-const space_zero = 0.0;
-const space_tiny = 1.0;
-const space_small = 4.0;
-const space_normal = 8.0;
-const space_big = 16.0;
-const space_huge = 32.0;
-const space_giant = 64.0;
+const kSpaceZero = 0.0;
+const kSpaceTiny = 1.0;
+const kSpaceSmall = 4.0;
+const kSpaceNormal = 8.0;
+const kSpaceBig = 16.0;
+const kSpaceHuge = 32.0;
+const kSpaceGiant = 64.0;
 
-const SPACE_ZERO = SizedBox(width: space_zero, height: space_zero);
-const SPACE_TINY = SizedBox(width: space_tiny, height: space_tiny);
-const SPACE_SMALL = SizedBox(width: space_small, height: space_small);
-const SPACE_NORMAL = SizedBox(width: space_normal, height: space_normal);
-const SPACE_BIG = SizedBox(width: space_big, height: space_big);
-const SPACE_HUGE = SizedBox(width: space_huge, height: space_huge);
-const SPACE_GIANT = SizedBox(width: space_huge, height: space_huge);
+const SPACE_ZERO = SizedBox(width: kSpaceZero, height: kSpaceZero);
+const SPACE_TINY = SizedBox(width: kSpaceTiny, height: kSpaceTiny);
+const SPACE_SMALL = SizedBox(width: kSpaceSmall, height: kSpaceSmall);
+const SPACE_NORMAL = SizedBox(width: kSpaceNormal, height: kSpaceNormal);
+const SPACE_BIG = SizedBox(width: kSpaceBig, height: kSpaceBig);
+const SPACE_HUGE = SizedBox(width: kSpaceHuge, height: kSpaceHuge);
+const SPACE_GIANT = SizedBox(width: kSpaceHuge, height: kSpaceHuge);
 //endregion
 
 //region text
-const text_normal = 16.0;
-const text_big = 18.0;
+const kTextNormal = 16.0;
+const kTextBig = 18.0;
 //endregion
 
 //region elevation
-const elevation_small = 2.0;
-const elevation_normal = 4.0;
-const elevation_big = 8.0;
-const elevation_huge = 16.0;
-const elevation_giant = 32.0;
+const kElevationSmall = 2.0;
+const kElevationNormal = 4.0;
+const kElevationBig = 8.0;
+const kElevationHuge = 16.0;
+const kElevationGiant = 32.0;
 //endregion
 
 double onePixel(BuildContext context) {

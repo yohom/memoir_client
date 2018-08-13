@@ -30,7 +30,7 @@ class HistoryStoryCard extends StatelessWidget {
       child: Card(
         color: Colors.pinkAccent,
         elevation: elevation,
-        margin: EdgeInsets.only(bottom: space_huge, right: space_normal),
+        margin: EdgeInsets.only(bottom: kSpaceHuge, right: kSpaceNormal),
         shape:
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.0)),
         child: Stack(

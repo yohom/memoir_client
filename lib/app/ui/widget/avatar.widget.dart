@@ -19,7 +19,7 @@ class Avatar extends StatelessWidget {
         width: width,
         height: height,
         child: Material(
-          elevation: elevation_big,
+          elevation: kElevationBig,
           borderRadius: BorderRadius.circular(90.0),
           child: CircleAvatar(
             backgroundImage: AssetImage('assets/images/reflectly-face.gif'),

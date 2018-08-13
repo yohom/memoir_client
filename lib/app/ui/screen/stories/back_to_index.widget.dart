@@ -30,7 +30,7 @@ class BackToIndex extends StatelessWidget {
               0.0,
             ),
             child: IconButton(
-              padding: EdgeInsets.only(left: space_big),
+              padding: EdgeInsets.only(left: kSpaceBig),
               icon: Icon(Icons.keyboard_arrow_left, size: 30.0),
               onPressed: () {
                 bloc.pageChange.add(PageChange(0, triggeredByBack: true));

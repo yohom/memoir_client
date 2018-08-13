@@ -20,7 +20,7 @@ class Close extends StatelessWidget {
       child: Align(
         alignment: AlignmentDirectional.topEnd,
         child: IconButton(
-          padding: EdgeInsets.only(right: space_huge, top: space_big),
+          padding: EdgeInsets.only(right: kSpaceHuge, top: kSpaceBig),
           icon: Icon(
             Icons.close,
             color: color,

@@ -31,7 +31,7 @@ class YesOrNo extends StatelessWidget {
         FractionallySizedBox(
           widthFactor: 0.6,
           child: RaisedButton(
-            elevation: elevation_big,
+            elevation: kElevationBig,
             padding: EdgeInsets.symmetric(vertical: 20.0),
             shape: StadiumBorder(),
             color: Colors.white,

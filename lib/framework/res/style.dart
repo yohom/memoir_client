@@ -18,9 +18,9 @@ InputDecoration getInputDecoration() {
   return InputDecoration(
     labelStyle: TextStyle(color: Colors.black),
     contentPadding: EdgeInsets.only(
-      left: space_normal,
-      top: space_big,
-      bottom: space_big,
+      left: kSpaceNormal,
+      top: kSpaceBig,
+      bottom: kSpaceBig,
     ),
     filled: true,
     fillColor: Colors.white,

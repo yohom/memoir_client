@@ -21,7 +21,7 @@ class NewStoryCard extends StatelessWidget {
       onTap: () => Router.navigate(context, EditStoryScreen()),
       child: Card(
         elevation: elevation,
-        margin: EdgeInsets.only(bottom: space_huge, right: space_normal),
+        margin: EdgeInsets.only(bottom: kSpaceHuge, right: kSpaceNormal),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16.0),
         ),

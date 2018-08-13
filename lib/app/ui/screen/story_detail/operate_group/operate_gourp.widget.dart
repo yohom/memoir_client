@@ -56,7 +56,7 @@ class _Exit extends StatelessWidget {
         return Operate(
           iconData: Icons.arrow_downward,
           onTap: () => Router.pop(context),
-          margin: EdgeInsets.only(left: space_big, top: space_big),
+          margin: EdgeInsets.only(left: kSpaceBig, top: kSpaceBig),
         );
       },
     );
@@ -86,8 +86,8 @@ class _More extends StatelessWidget {
                 bloc.showMoreOperate.add(!bloc.showMoreOperate.latest);
               },
               margin: EdgeInsets.only(
-                right: space_big,
-                top: space_big,
+                right: kSpaceBig,
+                top: kSpaceBig,
               ),
             );
           },
@@ -122,8 +122,8 @@ class _Edit extends StatelessWidget {
                 Router.navigate(context, EditStoryScreen());
               },
               margin: EdgeInsets.only(
-                right: space_big,
-                top: space_big,
+                right: kSpaceBig,
+                top: kSpaceBig,
               ),
             );
           },
@@ -168,8 +168,8 @@ class _UploadPicture extends StatelessWidget {
                 );
               },
               margin: EdgeInsets.only(
-                right: space_big,
-                top: space_big,
+                right: kSpaceBig,
+                top: kSpaceBig,
               ),
             );
           },
@@ -203,8 +203,8 @@ class _Delete extends StatelessWidget {
               iconData: Icons.delete,
               onTap: () {},
               margin: EdgeInsets.only(
-                right: space_big,
-                top: space_big,
+                right: kSpaceBig,
+                top: kSpaceBig,
               ),
             );
           },

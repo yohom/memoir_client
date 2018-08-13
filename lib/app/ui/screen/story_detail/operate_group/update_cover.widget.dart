@@ -30,7 +30,7 @@ class UpdateCover extends StatelessWidget {
                   width: getScreenSize(context).width * 0.7,
                   height: 48.0,
                   child: RaisedButton(
-                    elevation: elevation_big,
+                    elevation: kElevationBig,
                     color: Theme.of(context).buttonColor,
                     textColor: Colors.white,
                     onPressed: () {},

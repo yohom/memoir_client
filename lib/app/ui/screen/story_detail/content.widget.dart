@@ -21,15 +21,15 @@ class Content extends StatelessWidget {
       delay: Duration(microseconds: 600),
       builder: (_, __) {
         return Card(
-          elevation: elevation_normal,
+          elevation: kElevationNormal,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(32.0),
           ),
-          margin: EdgeInsets.all(space_zero),
+          margin: EdgeInsets.all(kSpaceZero),
           child: Padding(
             padding: const EdgeInsets.symmetric(
-              horizontal: space_normal,
-              vertical: space_huge,
+              horizontal: kSpaceNormal,
+              vertical: kSpaceHuge,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,

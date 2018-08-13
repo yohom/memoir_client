@@ -56,7 +56,7 @@ class _RateYourTodayState extends State<_RateYourToday> {
         ),
         SPACE_BIG,
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: space_big),
+          padding: const EdgeInsets.symmetric(horizontal: kSpaceBig),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[

@@ -98,18 +98,18 @@ class _StoryListState extends State<_StoryPageView> {
             return AnimatedPadding(
               duration: Duration(milliseconds: 500),
               curve: Curves.fastOutSlowIn,
-              padding: EdgeInsets.all(change.page == index ? 0.0 : space_big),
+              padding: EdgeInsets.all(change.page == index ? 0.0 : kSpaceBig),
               child: index == 1
                   ? NewStoryCard(
                       elevation: change.page == index
-                          ? elevation_big
-                          : elevation_normal,
+                          ? kElevationBig
+                          : kElevationNormal,
                     )
                   : HistoryStoryCard(
                       story: widget.storyList[index - 2],
                       elevation: change.page == index
-                          ? elevation_big
-                          : elevation_normal,
+                          ? kElevationBig
+                          : kElevationNormal,
                     ),
             );
           },

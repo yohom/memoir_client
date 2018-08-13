@@ -21,7 +21,7 @@ class Index extends StatelessWidget {
                 color: Colors.black,
               ),
         ),
-        SizedBox(width: 100.0, child: Divider(height: space_huge)),
+        SizedBox(width: 100.0, child: Divider(height: kSpaceHuge)),
         SPACE_NORMAL,
         Text(
           'FILTER STORIES',

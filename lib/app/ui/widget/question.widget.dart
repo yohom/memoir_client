@@ -12,7 +12,7 @@ class Question extends StatelessWidget {
     return SafeArea(
       bottom: false,
       child: Padding(
-        padding: const EdgeInsets.only(left: space_big),
+        padding: const EdgeInsets.only(left: kSpaceBig),
         child: Align(
           alignment: AlignmentDirectional.centerStart,
           child: QuicksandText(

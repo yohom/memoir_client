@@ -110,8 +110,8 @@ class _LetsDoIt extends StatelessWidget {
       child: FractionallySizedBox(
         widthFactor: 0.8,
         child: RaisedButton(
-          elevation: elevation_big,
-          padding: EdgeInsets.symmetric(vertical: space_big),
+          elevation: kElevationBig,
+          padding: EdgeInsets.symmetric(vertical: kSpaceBig),
           onPressed: () {
             bloc.scrollPage.add(1);
           },
