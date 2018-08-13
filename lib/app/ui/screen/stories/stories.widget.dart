@@ -1,7 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:memoir/app/model/api.dart';
+import 'package:memoir/app/bloc/bloc.dart';
+import 'package:memoir/app/model/model.dart';
 import 'package:memoir/app/model/bean/page_change.dart';
 import 'package:memoir/app/model/bean/story.dart';
 import 'package:memoir/app/res/dimens.dart';
@@ -12,7 +13,12 @@ import 'package:memoir/framework/res.dart';
 import 'package:memoir/framework/ui.dart';
 
 class Stories extends StatefulWidget {
-  const Stories({Key key}) : super(key: key);
+  final Bloc bloc;
+
+  const Stories({
+    Key key,
+    @required this.bloc,
+  }) : super(key: key);
 
   @override
   _StoriesState createState() {
@@ -27,7 +33,7 @@ class _StoriesState extends State<Stories> {
   void initState() {
     super.initState();
 
-    _storyList = Api.fetchStoryList({});
+    _storyList = widget.bloc.storyBloc.performFetchStoryList();
   }
 
   @override

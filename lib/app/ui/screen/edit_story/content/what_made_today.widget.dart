@@ -12,16 +12,16 @@ class WhatMadeToday extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: <Widget>[
-        SizedBox(height: 120.0),
+        SizedBox(height: 100.0),
         Question(question: 'Sorry about that - what made today somewhat bad?'),
-        Flexible(child: ThingMadeToday()),
+        Flexible(child: _ThingMadeToday()),
         StepIndicator(goToPage: 3, returnToPage: 1),
       ],
     );
   }
 }
 
-class ThingMadeToday extends StatelessWidget {
+class _ThingMadeToday extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(

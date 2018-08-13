@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:memoir/app/ui/screen/edit_story/content/elaborate.widget.dart';
 import 'package:memoir/app/ui/screen/edit_story/content/greeting.widget.dart';
+import 'package:memoir/app/ui/screen/edit_story/content/how_you_feel.widget.dart';
 import 'package:memoir/app/ui/screen/edit_story/content/select_mood.widget.dart';
 import 'package:memoir/app/ui/screen/edit_story/content/what_made_today.widget.dart';
 import 'package:memoir/app/ui/screen/edit_story/edit_story.screen.dart';
@@ -34,6 +35,7 @@ class Content extends StatelessWidget {
         SelectMood(),
         WhatMadeToday(),
         Elaborate(),
+        HowYouFeel(),
       ],
     );
   }

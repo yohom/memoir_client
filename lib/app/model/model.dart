@@ -7,6 +7,8 @@ import 'package:memoir/app/model/bean/story.dart';
 import 'package:memoir/framework/utils.dart';
 import 'package:memoir/framework/utils/parse.dart';
 
+class Model {}
+
 class Api {
   ///
   /// 获取story列表

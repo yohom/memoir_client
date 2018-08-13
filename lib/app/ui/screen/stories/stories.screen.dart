@@ -3,6 +3,7 @@ import 'package:memoir/app/ui/screen/stories/back_to_index.widget.dart';
 import 'package:memoir/app/ui/screen/stories/stories.widget.dart';
 import 'package:memoir/app/ui/widget/avatar.widget.dart';
 import 'package:memoir/framework/res.dart';
+import 'package:memoir/framework/ui.dart';
 
 class StoriesScreen extends StatelessWidget {
   const StoriesScreen({Key key}) : super(key: key);
@@ -18,7 +19,7 @@ class StoriesScreen extends StatelessWidget {
               SPACE_NORMAL,
               SafeArea(child: Avatar(width: 80.0, height: 80.0)),
               SPACE_BIG,
-              Stories(),
+              Stories(bloc: BlocProvider.of(context)),
             ],
           ),
           BackToIndex(),

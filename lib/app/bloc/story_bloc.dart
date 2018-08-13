@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:memoir/app/model/api.dart';
+import 'package:memoir/app/model/model.dart';
 import 'package:memoir/app/model/bean/bean.dart';
 import 'package:memoir/app/model/bean/page_change.dart';
 import 'package:memoir/app/model/bean/story.dart';
@@ -37,9 +37,7 @@ class StoryBloc {
   ///
   /// 获取story列表
   ///
-  Future<List<Story>> performFetchStoryList() {
-    return Api.fetchStoryList({});
-  }
+  Future<List<Story>> performFetchStoryList() => Api.fetchStoryList({});
 
   ///
   /// 新增story
