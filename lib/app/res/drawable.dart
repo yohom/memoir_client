@@ -19,6 +19,15 @@ class ReflectlyIcons {
   static const write = IconData(0xe97d, fontFamily: 'ReflectlyIcons');
   static const listen = IconData(0xe945, fontFamily: 'ReflectlyIcons');
   static const mine = IconData(0xe9a0, fontFamily: 'ReflectlyIcons');
+  static const happy = IconData(0xe934, fontFamily: 'ReflectlyIcons');
+  static const blessed = IconData(0xe944, fontFamily: 'ReflectlyIcons');
+  static const lucky = IconData(0xe969, fontFamily: 'ReflectlyIcons');
+  static const good = IconData(0xe967, fontFamily: 'ReflectlyIcons');
+  static const confused = IconData(0xe965, fontFamily: 'ReflectlyIcons');
+  static const stressed = IconData(0xe992, fontFamily: 'ReflectlyIcons');
+  static const angry = IconData(0xe92e, fontFamily: 'ReflectlyIcons');
+  static const anxious = IconData(0xe92f, fontFamily: 'ReflectlyIcons');
+  static const down = IconData(0xe933, fontFamily: 'ReflectlyIcons');
 }
 
 class Images {

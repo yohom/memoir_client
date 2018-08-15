@@ -10,7 +10,7 @@ enum SlideDirection {
 
 class FadeSlideTransition extends StatefulWidget {
   ///
-  /// [builder]有两个参数, 一个是[BuildContext], 就是常规用法, 另一个是[controller], 是
+  /// [builder]有两个参数, 一个是[BuildContext], 就是常规用法, 另一个是[_controller], 是
   /// 为了在[builder]方法体中能够控制动画, 比如说进行动画的reverse.
   ///
   final Builder builder;
