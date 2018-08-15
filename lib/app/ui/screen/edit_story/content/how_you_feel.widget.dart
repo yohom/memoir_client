@@ -50,19 +50,12 @@ class _FeelState extends State<_Feel> {
 
   @override
   Widget build(BuildContext context) {
-    final bloc = BlocProvider.of(context).storyBloc;
-    return Carousel(
-      children: <Widget>[
-        Icon(_iconDataList[0], color: Colors.white, size: 80.0),
-        Icon(_iconDataList[1], color: Colors.white, size: 80.0),
-        Icon(_iconDataList[2], color: Colors.white, size: 80.0),
-        Icon(_iconDataList[3], color: Colors.white, size: 80.0),
-        Icon(_iconDataList[4], color: Colors.white, size: 80.0),
-        Icon(_iconDataList[5], color: Colors.white, size: 80.0),
-        Icon(_iconDataList[6], color: Colors.white, size: 80.0),
-        Icon(_iconDataList[7], color: Colors.white, size: 80.0),
-        Icon(_iconDataList[8], color: Colors.white, size: 80.0),
-      ],
+    return Carousel.builder(
+      viewportFraction: 0.3,
+      itemCount: _iconDataList.length,
+      itemBuilder: (_, index) {
+        return Icon(_iconDataList[index], size: 80.0, color: Colors.white);
+      },
     );
   }
 
