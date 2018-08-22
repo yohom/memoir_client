@@ -7,6 +7,7 @@ import 'package:memoir/framework/ui.dart';
 
 void main() {
   MaterialPageRoute.debugEnableFadingRoutes = true;
+  debugPrintRebuildDirtyWidgets = true;
 
   runApp(MemoirApp());
 }

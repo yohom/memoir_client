@@ -5,8 +5,8 @@ import 'package:memoir/framework/res.dart';
 ///
 /// Page的第一页
 ///
-class Index extends StatelessWidget {
-  const Index({Key key}) : super(key: key);
+class Intro extends StatelessWidget {
+  const Intro({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

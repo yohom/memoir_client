@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:memoir/app/model/bean/story.dart';
-import 'package:memoir/app/ui/screen/stories/story_date.widget.dart';
-import 'package:memoir/app/ui/screen/stories/story_title.widget.dart';
+import 'package:memoir/app/ui/widget/story_date.widget.dart';
+import 'package:memoir/app/ui/widget/story_title.widget.dart';
 import 'package:memoir/app/ui/screen/story_detail/story_detail.screen.dart';
 import 'package:memoir/app/ui/widget/mood.widget.dart';
 import 'package:memoir/framework/res.dart';
@@ -42,29 +42,25 @@ class HistoryStoryCard extends StatelessWidget {
                 child: ImageWidget(imageUrl: story.storyImage),
               ),
             ),
-            Stack(
-              children: <Widget>[
-                Positioned(
-                  left: 24.0,
-                  top: 24.0,
-                  child: StoryDate(storyDate: story.storyDate),
-                ),
-                Positioned(
-                  right: 24.0,
-                  top: 24.0,
-                  child: _Favorite(),
-                ),
-                Positioned(
-                  left: 24.0,
-                  bottom: 24.0,
-                  child: StoryTitle(title: story.title),
-                ),
-                Positioned(
-                  right: 24.0,
-                  bottom: 24.0,
-                  child: Mood(),
-                ),
-              ],
+            Positioned(
+              left: 24.0,
+              top: 24.0,
+              child: StoryDate(storyDate: story.storyDate),
+            ),
+            Positioned(
+              right: 24.0,
+              top: 24.0,
+              child: _Favorite(),
+            ),
+            Positioned(
+              left: 24.0,
+              bottom: 24.0,
+              child: StoryTitle(title: story.title),
+            ),
+            Positioned(
+              right: -16.0,
+              bottom: 24.0,
+              child: Mood(),
             ),
           ],
         ),

@@ -2,13 +2,12 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:memoir/app/bloc/bloc.dart';
-import 'package:memoir/app/model/model.dart';
 import 'package:memoir/app/model/bean/page_change.dart';
 import 'package:memoir/app/model/bean/story.dart';
 import 'package:memoir/app/res/dimens.dart';
-import 'package:memoir/app/ui/screen/stories/history_story_card.widget.dart';
-import 'package:memoir/app/ui/screen/stories/index.widget.dart';
-import 'package:memoir/app/ui/screen/stories/new_story_card.widget.dart';
+import 'package:memoir/app/ui/screen/index/stories/history_story_card.widget.dart';
+import 'package:memoir/app/ui/screen/index/stories/intro.widget.dart';
+import 'package:memoir/app/ui/screen/index/stories/new_story_card.widget.dart';
 import 'package:memoir/framework/res.dart';
 import 'package:memoir/framework/ui.dart';
 
@@ -87,7 +86,7 @@ class _StoryListState extends State<_StoryPageView> {
       onPageChanged: (page) => bloc.pageChange.add(PageChange(page)),
       itemCount: widget.storyList.length + 2,
       itemBuilder: (context, index) {
-        if (index == 0) return Index();
+        if (index == 0) return Intro();
         return StreamWidget<PageChange>(
           // 只接受自然滑动事件
           stream: bloc.pageChange.stream.where((change) {

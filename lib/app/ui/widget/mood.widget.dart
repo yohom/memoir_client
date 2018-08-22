@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:memoir/app/res/drawable.dart';
 
 ///
 /// 心情
@@ -10,6 +11,10 @@ class Mood extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text('d');
+    return Icon(
+      ReflectlyIcons.happy,
+      color: Colors.white.withOpacity(0.5),
+      size: 100.0,
+    );
   }
 }

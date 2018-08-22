@@ -8,6 +8,18 @@ import 'package:memoir/framework/res.dart';
 import 'package:memoir/framework/ui.dart';
 import 'package:memoir/framework/ui/carousel.widget.dart';
 
+final _iconDataList = [
+  {ReflectlyIcons.happy: 'Happy'},
+  {ReflectlyIcons.blessed: 'Blessed'},
+  {ReflectlyIcons.lucky: 'Lucky'},
+  {ReflectlyIcons.good: 'Good'},
+  {ReflectlyIcons.confused: 'Confused'},
+  {ReflectlyIcons.stressed: 'Stressed'},
+  {ReflectlyIcons.angry: 'Angry'},
+  {ReflectlyIcons.anxious: 'Anxious'},
+  {ReflectlyIcons.down: 'Down'},
+];
+
 class HowYouFeel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -32,22 +44,6 @@ class _Feel extends StatefulWidget {
 
 class _FeelState extends State<_Feel> {
   final _controller = PageController(viewportFraction: 0.35);
-  final _iconDataList = [
-    {ReflectlyIcons.happy: 'Happy'},
-    {ReflectlyIcons.blessed: 'Blessed'},
-    {ReflectlyIcons.lucky: 'Lucky'},
-    {ReflectlyIcons.good: 'Good'},
-    {ReflectlyIcons.confused: 'Confused'},
-    {ReflectlyIcons.stressed: 'Stressed'},
-    {ReflectlyIcons.angry: 'Angry'},
-    {ReflectlyIcons.anxious: 'Anxious'},
-    {ReflectlyIcons.down: 'Down'},
-  ];
-
-  @override
-  void initState() {
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {

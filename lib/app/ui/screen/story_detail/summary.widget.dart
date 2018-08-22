@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:memoir/app/model/bean/story.dart';
 import 'package:memoir/app/ui/widget/mood.widget.dart';
-import 'package:memoir/app/ui/screen/stories/story_date.widget.dart';
-import 'package:memoir/app/ui/screen/stories/story_title.widget.dart';
+import 'package:memoir/app/ui/widget/story_date.widget.dart';
+import 'package:memoir/app/ui/widget/story_title.widget.dart';
 import 'package:memoir/framework/res.dart';
 
 ///
