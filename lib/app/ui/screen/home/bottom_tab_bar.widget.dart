@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:memoir/app/res/dimens.dart';
 import 'package:memoir/app/res/drawable.dart';
 import 'package:memoir/app/ui/widget/calendar.widget.dart';
-import 'package:memoir/app/utils/devices.dart';
 import 'package:memoir/framework/res.dart';
 import 'package:memoir/framework/ui/dot_indicator.widget.dart';
+import 'package:memoir/framework/ui/shadow_box.widget.dart';
+import 'package:memoir/framework/utils/global.dart';
 
 class BottomTabBar extends StatefulWidget {
   const BottomTabBar({
@@ -29,16 +29,12 @@ class _BottomTabBarState extends State<BottomTabBar>
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      margin: EdgeInsets.all(kSpaceSmall),
-      elevation: kElevationNormal,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(
-          top: Radius.circular(8.0),
-          bottom: Radius.circular(
-            Devices.isIPhoneX(context) ? 40.0 : 8.0,
-          ),
-        ),
+    return ShadowBox(
+      blurRadius: 12.0,
+      spreadRadius: -4.0,
+      borderRadius: BorderRadius.vertical(
+        top: Radius.circular(8.0),
+        bottom: Radius.circular(Global.isIPhoneX ? 40.0 : 8.0),
       ),
       child: SafeArea(
         top: false,

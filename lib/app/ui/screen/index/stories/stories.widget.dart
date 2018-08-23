@@ -37,15 +37,10 @@ class _StoriesState extends State<Stories> {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Padding(
-        padding: EdgeInsets.only(bottom: kBottomBarHeight),
-        child: SafeArea(
-          child: FutureWidget<List<Story>>(
-            future: _storyList,
-            builder: (data) => _StoryPageView(data),
-          ),
-        ),
+    return SafeArea(
+      child: FutureWidget<List<Story>>(
+        future: _storyList,
+        builder: (data) => _StoryPageView(data),
       ),
     );
   }

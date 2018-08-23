@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:memoir/app/constants.dart';
 import 'package:memoir/app/res/color.dart';
+import 'package:memoir/app/res/dimens.dart';
 import 'package:memoir/app/res/drawable.dart';
 import 'package:memoir/app/ui/screen/edit_story/edit_story.screen.dart';
 import 'package:memoir/app/ui/widget/fonted_text.dart';
 import 'package:memoir/framework/res.dart';
+import 'package:memoir/framework/ui/shadow_box.widget.dart';
 import 'package:memoir/framework/utils.dart';
+
+const kCardRadius = 12.0;
 
 class NewStoryCard extends StatelessWidget {
   final double elevation;
@@ -19,12 +23,13 @@ class NewStoryCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => Router.navigate(context, EditStoryScreen()),
-      child: Card(
-        elevation: elevation,
-        margin: EdgeInsets.only(bottom: kSpaceHuge, right: kSpaceNormal),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16.0),
-        ),
+      child: ShadowBox(
+        borderRadius: BorderRadius.circular(kCardRadius),
+        spreadRadius: -16.0,
+        blurRadius: 24.0,
+        shadowColor: Theme.of(context).primaryColor,
+        shadowOffset: Offset(0.0, 24.0),
+        margin: EdgeInsets.only(bottom: kStoriesBottomPadding),
         child: Stack(
           alignment: AlignmentDirectional.center,
           fit: StackFit.expand,
@@ -33,6 +38,7 @@ class NewStoryCard extends StatelessWidget {
               tag: NEW_STORY_CARD_TO_EDIT_STORY,
               child: Container(
                 decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(kCardRadius),
                   gradient: LinearGradient(
                     colors: [kGradientStartColor, kGradientEndColor],
                     begin: Alignment.topCenter,
@@ -53,7 +59,10 @@ class NewStoryCard extends StatelessWidget {
                 SPACE_BIG,
                 AvenirText(
                   'ADD NEW STORY',
-                  style: TextStyle(color: Colors.white),
+                  style: TextStyle(
+                    color: Colors.white.withOpacity(0.6),
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
               ],
             ),

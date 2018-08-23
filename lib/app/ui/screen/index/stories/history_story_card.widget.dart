@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:memoir/app/model/bean/story.dart';
+import 'package:memoir/app/res/dimens.dart';
 import 'package:memoir/app/ui/widget/story_date.widget.dart';
 import 'package:memoir/app/ui/widget/story_title.widget.dart';
 import 'package:memoir/app/ui/screen/story_detail/story_detail.screen.dart';
 import 'package:memoir/app/ui/widget/mood.widget.dart';
 import 'package:memoir/framework/res.dart';
 import 'package:memoir/framework/ui.dart';
+import 'package:memoir/framework/ui/shadow_box.widget.dart';
 import 'package:memoir/framework/utils.dart';
+
+const kCardRadius = 12.0;
 
 ///
 /// 历史Story对应的Card
@@ -27,20 +31,21 @@ class HistoryStoryCard extends StatelessWidget {
       onTap: () {
         Router.navigate(context, StoryDetailScreen(story: story));
       },
-      child: Card(
-        color: Colors.pinkAccent,
-        elevation: elevation,
-        margin: EdgeInsets.only(bottom: kSpaceHuge, right: kSpaceNormal),
-        shape:
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.0)),
+      child: ShadowBox(
+        borderRadius: BorderRadius.circular(kCardRadius),
+        spreadRadius: -16.0,
+        blurRadius: 24.0,
+        shadowOffset: Offset(0.0, 24.0),
+        margin: EdgeInsets.only(bottom: kStoriesBottomPadding),
         child: Stack(
+          fit: StackFit.expand,
           alignment: AlignmentDirectional.center,
           children: <Widget>[
             Hero(
               tag: story.title,
-              child: SizedBox.expand(
-                child: ImageWidget(imageUrl: story.storyImage),
-              ),
+              child: ClipRRect(
+                  borderRadius: BorderRadius.circular(kCardRadius),
+                  child: ImageWidget(imageUrl: story.storyImage)),
             ),
             Positioned(
               left: 24.0,

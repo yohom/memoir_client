@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:memoir/app/ui/animation/show_up.transition.dart';
-import 'package:memoir/framework/res.dart';
+import 'package:memoir/framework/ui/shadow_box.widget.dart';
 
 class Avatar extends StatelessWidget {
   final double width;
@@ -15,15 +15,15 @@ class Avatar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ShowUpTransition(
-      child: SizedBox(
+      child: ShadowBox(
+        shape: BoxShape.circle,
         width: width,
         height: height,
-        child: Material(
-          elevation: kElevationBig,
-          borderRadius: BorderRadius.circular(90.0),
-          child: CircleAvatar(
-            backgroundImage: AssetImage('assets/images/reflectly-face.gif'),
-          ),
+        shadowOffset: Offset(0.0, 12.0),
+        spreadRadius: -8.0,
+        blurRadius: 16.0,
+        child: CircleAvatar(
+          backgroundImage: AssetImage('assets/images/reflectly-face.gif'),
         ),
       ),
     );

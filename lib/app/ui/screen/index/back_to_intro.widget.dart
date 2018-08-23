@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:memoir/app/model/bean/page_change.dart';
-import 'package:memoir/framework/res.dart';
+import 'package:memoir/app/res/drawable.dart';
 import 'package:memoir/framework/ui.dart';
 
 class BackToIndex extends StatelessWidget {
@@ -30,8 +30,7 @@ class BackToIndex extends StatelessWidget {
               0.0,
             ),
             child: IconButton(
-              padding: EdgeInsets.only(left: kSpaceBig),
-              icon: Icon(Icons.keyboard_arrow_left, size: 30.0),
+              icon: Icon(ReflectlyIcons.back1, color: Colors.grey),
               onPressed: () {
                 bloc.pageChange.add(PageChange(0, triggeredByBack: true));
               },

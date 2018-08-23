@@ -30,12 +30,13 @@ class ReflectlyIcons {
   static const down = IconData(0xe933, fontFamily: 'ReflectlyIcons');
   static const more = IconData(0xe96c, fontFamily: 'ReflectlyIcons');
   static const moreBold = IconData(0xe96b, fontFamily: 'ReflectlyIcons');
-  static const back = IconData(0xe904, fontFamily: 'ReflectlyIcons');
   static const backBold = IconData(0xe903, fontFamily: 'ReflectlyIcons');
   static const closeBold = IconData(0xe91e, fontFamily: 'ReflectlyIcons');
   static const deleteBold = IconData(0xe9ac, fontFamily: 'ReflectlyIcons');
   static const addImage = IconData(0xe988, fontFamily: 'ReflectlyIcons');
   static const editImage = IconData(0xe94d, fontFamily: 'ReflectlyIcons');
+  static const back0 = IconData(0xe904, fontFamily: 'ReflectlyIcons');
+  static const back1 = IconData(0xe952, fontFamily: 'ReflectlyIcons');
 }
 
 class Images {

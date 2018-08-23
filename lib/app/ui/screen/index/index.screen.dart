@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:memoir/app/res/dimens.dart';
 import 'package:memoir/app/ui/screen/index/back_to_intro.widget.dart';
 import 'package:memoir/app/ui/screen/index/stories/stories.widget.dart';
 import 'package:memoir/app/ui/widget/avatar.widget.dart';
@@ -19,10 +20,13 @@ class IndexScreen extends StatelessWidget {
               SPACE_NORMAL,
               SafeArea(child: Avatar(width: 48.0, height: 48.0)),
               SPACE_HUGE,
-              Stories(bloc: BlocProvider.of(context)),
+              Flexible(child: Stories(bloc: BlocProvider.of(context))),
             ],
           ),
-          BackToIndex(),
+          Padding(
+            padding: const EdgeInsets.only(left: 8.0, top: 8.0),
+            child: BackToIndex(),
+          ),
         ],
       ),
     );

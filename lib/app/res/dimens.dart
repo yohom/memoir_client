@@ -1,1 +1,1 @@
-const kBottomBarHeight = 80.0;
+const kStoriesBottomPadding = 106.0;

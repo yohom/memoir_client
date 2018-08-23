@@ -11,18 +11,20 @@ class Intro extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
+        SPACE_GIANT,
         AvenirText(
-          'Your Stories',
+          'Your \nStories',
           style: Theme.of(context).textTheme.display1.copyWith(
                 fontWeight: FontWeight.bold,
                 color: Colors.black,
               ),
         ),
-        SizedBox(width: 100.0, child: Divider(height: kSpaceHuge)),
-        SPACE_NORMAL,
+        SPACE_HUGE,
+        _Divider(),
+        SPACE_HUGE,
         Text(
           'FILTER STORIES',
           style: TextStyle(color: Colors.grey),
@@ -33,6 +35,25 @@ class Intro extends StatelessWidget {
           style: Theme.of(context).textTheme.subhead,
         ),
       ],
+    );
+  }
+}
+
+/// 分割线
+class _Divider extends StatelessWidget {
+  const _Divider({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 80.0,
+      height: 2.0,
+      decoration: BoxDecoration(
+        color: Colors.grey.withOpacity(0.6),
+        borderRadius: BorderRadius.circular(45.0),
+      ),
     );
   }
 }

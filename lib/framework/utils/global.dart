@@ -16,10 +16,14 @@ class Global {
   /// 一个物理像素, 不建议使用, 渲染会有问题
   static double kOnePixel;
 
+  /// 是否是iPhoneX
+  static bool isIPhoneX;
+
   static init(BuildContext context) {
     final media = MediaQuery.of(context);
     kScreenWidth = media.size.width;
     kScreenHeight = media.size.height;
     kOnePixel = 1 / media.devicePixelRatio;
+    isIPhoneX = MediaQuery.of(context).size.height == 812;
   }
 }
