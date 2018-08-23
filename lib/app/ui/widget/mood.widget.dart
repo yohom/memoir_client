@@ -5,8 +5,11 @@ import 'package:memoir/app/res/drawable.dart';
 /// 心情
 ///
 class Mood extends StatelessWidget {
+  final double size;
+
   const Mood({
     Key key,
+    this.size = 96.0,
   }) : super(key: key);
 
   @override
@@ -14,7 +17,7 @@ class Mood extends StatelessWidget {
     return Icon(
       ReflectlyIcons.happy,
       color: Colors.white.withOpacity(0.5),
-      size: 100.0,
+      size: size,
     );
   }
 }

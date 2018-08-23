@@ -32,12 +32,12 @@ class Operate extends StatelessWidget {
       onTap: onTap,
       child: Card(
         margin: margin,
-        elevation: kElevationNormal,
+        elevation: kElevationHuge,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(45.0),
         ),
         child: Padding(
-          padding: const EdgeInsets.all(kSpaceNormal),
+          padding: const EdgeInsets.all(kSpaceLittleBig),
           child: RotatedBox(quarterTurns: quarterTurns, child: Icon(iconData)),
         ),
       ),

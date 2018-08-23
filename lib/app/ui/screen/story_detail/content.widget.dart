@@ -18,10 +18,8 @@ class Content extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final titleTheme = Theme.of(context)
-        .textTheme
-        .subhead
-        .copyWith(fontWeight: FontWeight.bold);
+    final titleTheme =
+        Theme.of(context).textTheme.body1.copyWith(fontWeight: FontWeight.bold);
     final contentTheme =
         Theme.of(context).textTheme.subhead.copyWith(color: Colors.grey);
 
@@ -38,7 +36,7 @@ class Content extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.symmetric(
               horizontal: kSpaceLarge,
-              vertical: kSpaceHuge,
+              vertical: kSpaceLarge,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -55,11 +53,11 @@ class Content extends StatelessWidget {
                 SPACE_BIG,
                 AvenirText('的', style: contentTheme),
                 SPACE_GIANT,
-                AvenirText('YOUR DAILY NOTES?', style: titleTheme),
+                AvenirText('YOUR DAILY NOTES', style: titleTheme),
                 SPACE_BIG,
                 AvenirText('hahahahahha', style: contentTheme),
                 SPACE_GIANT,
-                AvenirText('IMAGE OF THE DAY?', style: titleTheme),
+                AvenirText('IMAGE OF THE DAY', style: titleTheme),
                 SPACE_BIG,
                 _AddImage(),
                 SPACE_HUGE,
@@ -95,6 +93,7 @@ class _VisualHandle extends StatelessWidget {
   }
 }
 
+/// 新增照片
 class _AddImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

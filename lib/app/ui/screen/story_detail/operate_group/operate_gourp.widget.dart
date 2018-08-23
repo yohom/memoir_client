@@ -55,7 +55,7 @@ class _Exit extends StatelessWidget {
       originOffset: Offset(-100.0, 0.0),
       builder: (_, __) {
         return Operate(
-          iconData: ReflectlyIcons.back,
+          iconData: ReflectlyIcons.backBold,
           onTap: () => Router.pop(context),
           margin: EdgeInsets.only(left: kSpaceBig, top: kSpaceBig),
           quarterTurns: -1,
@@ -83,7 +83,8 @@ class _More extends StatelessWidget {
           initialData: false,
           builder: (_, ss) {
             return Operate(
-              iconData: ss.data ? ReflectlyIcons.close : ReflectlyIcons.more,
+              iconData:
+                  ss.data ? ReflectlyIcons.closeBold : ReflectlyIcons.moreBold,
               onTap: () {
                 bloc.showMoreOperate.add(!bloc.showMoreOperate.latest);
               },
@@ -120,7 +121,7 @@ class _Edit extends StatelessWidget {
           builder: (_, ss) {
             ss.data ? controller.forward() : controller.reverse();
             return Operate(
-              iconData: Icons.mode_edit,
+              iconData: ReflectlyIcons.write,
               onTap: () {
                 Router.navigate(context, EditStoryScreen());
               },
@@ -160,7 +161,7 @@ class _UploadPicture extends StatelessWidget {
             Observable.timer(null, Duration(milliseconds: 200)).listen(
                 (_) => ss.data ? controller.forward() : controller.reverse());
             return Operate(
-              iconData: Icons.image,
+              iconData: ReflectlyIcons.editImage,
               onTap: () {
                 bloc.showMoreOperate.add(!bloc.showMoreOperate.latest);
                 showLightDialog(
@@ -203,7 +204,7 @@ class _Delete extends StatelessWidget {
             Observable.timer(null, Duration(milliseconds: 400)).listen(
                 (_) => ss.data ? controller.forward() : controller.reverse());
             return Operate(
-              iconData: Icons.delete,
+              iconData: ReflectlyIcons.deleteBold,
               onTap: () {},
               margin: EdgeInsets.only(
                 right: kSpaceBig,

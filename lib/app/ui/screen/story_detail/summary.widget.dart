@@ -32,8 +32,8 @@ class Summary extends StatelessWidget {
           ),
         ),
         Positioned(
-          right: -kSpaceBig,
-          child: Mood(),
+          right: -kSpaceHuge,
+          child: Mood(size: 120.0),
         ),
       ],
     );
