@@ -1,1 +1,1 @@
-const kBottomBarHeight = 64.0;
+const kBottomBarHeight = 80.0;

@@ -17,8 +17,8 @@ class IndexScreen extends StatelessWidget {
           Column(
             children: <Widget>[
               SPACE_NORMAL,
-              SafeArea(child: Avatar(width: 80.0, height: 80.0)),
-              SPACE_BIG,
+              SafeArea(child: Avatar(width: 48.0, height: 48.0)),
+              SPACE_HUGE,
               Stories(bloc: BlocProvider.of(context)),
             ],
           ),
