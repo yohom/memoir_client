@@ -17,12 +17,10 @@ const kCardRadius = 12.0;
 ///
 class HistoryStoryCard extends StatelessWidget {
   final Story story;
-  final double elevation;
 
   const HistoryStoryCard({
     Key key,
     @required this.story,
-    @required this.elevation,
   }) : super(key: key);
 
   @override
@@ -36,7 +34,11 @@ class HistoryStoryCard extends StatelessWidget {
         spreadRadius: -16.0,
         blurRadius: 24.0,
         shadowOffset: Offset(0.0, 24.0),
-        margin: EdgeInsets.only(bottom: kStoriesBottomPadding),
+        margin: EdgeInsets.only(
+          bottom: kStoriesBottomPadding,
+          left: kSpaceSmall,
+          right: kSpaceSmall,
+        ),
         child: Stack(
           fit: StackFit.expand,
           alignment: AlignmentDirectional.center,

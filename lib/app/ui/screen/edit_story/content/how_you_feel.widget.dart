@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:memoir/app/model/bean/page_change.dart';
 import 'package:memoir/app/res/drawable.dart';
 import 'package:memoir/app/ui/widget/fonted_text.dart';
 import 'package:memoir/app/ui/widget/question.widget.dart';
 import 'package:memoir/app/ui/widget/step_indicator.widget.dart';
 import 'package:memoir/framework/res.dart';
-import 'package:memoir/framework/ui.dart';
-import 'package:memoir/framework/ui/carousel.widget.dart';
 
 final _iconDataList = [
   {ReflectlyIcons.happy: 'Happy'},
