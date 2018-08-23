@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:memoir/app/ui/widget/fonted_text.dart';
 
 ///
 /// story日期
@@ -13,10 +14,10 @@ class StoryDate extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(storyDate,
-        style: Theme.of(context)
-            .textTheme
-            .headline
-            .copyWith(color: Colors.white, fontWeight: FontWeight.bold));
+    return AvenirText(
+      storyDate,
+      style: Theme.of(context).textTheme.title.copyWith(
+          color: Colors.white.withOpacity(0.8), fontWeight: FontWeight.bold),
+    );
   }
 }

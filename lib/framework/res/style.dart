@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:memoir/framework/res/dimens.dart';
+import 'package:memoir/framework/utils/global.dart';
 
 ThemeData getTextFieldTheme() {
   return ThemeData(
@@ -37,7 +38,7 @@ RoundedRectangleBorder getRoundedCornerBorder(
     borderRadius: BorderRadius.circular(radius),
     side: BorderSide(
       color: borderColor,
-      width: onePixel(context),
+      width: Global.kOnePixel,
     ),
   );
 }

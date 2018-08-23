@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:memoir/app/ui/screen/edit_story/edit_story.screen.dart';
-import 'package:memoir/app/ui/widget/widget.export.dart';
+import 'package:memoir/app/ui/widget/avatar.widget.dart';
 import 'package:memoir/framework/res.dart';
 import 'package:memoir/framework/ui.dart';
 

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:memoir/app/model/bean/story.dart';
+import 'package:memoir/app/res/drawable.dart';
 import 'package:memoir/app/ui/animation/fade_slide.transition.dart';
+import 'package:memoir/app/ui/widget/fonted_text.dart';
 import 'package:memoir/framework/res.dart';
 
 ///
@@ -16,6 +18,13 @@ class Content extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final titleTheme = Theme.of(context)
+        .textTheme
+        .subhead
+        .copyWith(fontWeight: FontWeight.bold);
+    final contentTheme =
+        Theme.of(context).textTheme.subhead.copyWith(color: Colors.grey);
+
     return FadeSlideTransition(
       originOffset: Offset(0.0, 200.0),
       delay: Duration(microseconds: 600),
@@ -28,45 +37,90 @@ class Content extends StatelessWidget {
           margin: EdgeInsets.all(kSpaceZero),
           child: Padding(
             padding: const EdgeInsets.symmetric(
-              horizontal: kSpaceNormal,
+              horizontal: kSpaceLarge,
               vertical: kSpaceHuge,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Divider(height: 32.0),
-                Text('今天发生了什么?', style: Theme.of(context).textTheme.headline),
-                Text('balabalababa',
-                    style: Theme.of(context).textTheme.subhead),
+                _VisualHandle(),
                 SPACE_HUGE,
-                Text('今天发生了什么?', style: Theme.of(context).textTheme.headline),
-                Text('balabalababa',
-                    style: Theme.of(context).textTheme.subhead),
+                AvenirText('WHAT HAPPENED TODAY?', style: titleTheme),
+                SPACE_BIG,
+                AvenirText('啊啊啊', style: contentTheme),
+                SPACE_GIANT,
+                AvenirText(
+                    'WHAT 3 THINGS WOULD YOU TAKE WITH YOU ON A DESERTED ISLAND?',
+                    style: titleTheme),
+                SPACE_BIG,
+                AvenirText('的', style: contentTheme),
+                SPACE_GIANT,
+                AvenirText('YOUR DAILY NOTES?', style: titleTheme),
+                SPACE_BIG,
+                AvenirText('hahahahahha', style: contentTheme),
+                SPACE_GIANT,
+                AvenirText('IMAGE OF THE DAY?', style: titleTheme),
+                SPACE_BIG,
+                _AddImage(),
                 SPACE_HUGE,
-                Text('今天发生了什么?', style: Theme.of(context).textTheme.headline),
-                Text('balabalababa',
-                    style: Theme.of(context).textTheme.subhead),
-                SPACE_HUGE,
-                Text('今天发生了什么?', style: Theme.of(context).textTheme.headline),
-                Text('balabalababa',
-                    style: Theme.of(context).textTheme.subhead),
-                SPACE_HUGE,
-                Text('今天发生了什么?', style: Theme.of(context).textTheme.headline),
-                Text('balabalababa',
-                    style: Theme.of(context).textTheme.subhead),
-                SPACE_HUGE,
-                Text('今天发生了什么?', style: Theme.of(context).textTheme.headline),
-                Text('balabalababa',
-                    style: Theme.of(context).textTheme.subhead),
-                SPACE_HUGE,
-                Text('今天发生了什么?', style: Theme.of(context).textTheme.headline),
-                Text('balabalababa',
-                    style: Theme.of(context).textTheme.subhead),
               ],
             ),
           ),
         );
       },
+    );
+  }
+}
+
+/// 视觉上的句柄, 就是那个短杠
+class _VisualHandle extends StatelessWidget {
+  const _VisualHandle({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Align(
+      alignment: AlignmentDirectional.center,
+      heightFactor: 4.0,
+      child: Container(
+        height: 6.0,
+        width: 64.0,
+        decoration: BoxDecoration(
+          color: Colors.grey.withOpacity(0.2),
+          borderRadius: BorderRadius.circular(45.0),
+        ),
+      ),
+    );
+  }
+}
+
+class _AddImage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 120.0,
+      height: 150.0,
+      decoration: BoxDecoration(
+        border: Border.all(width: 2.0, color: Colors.grey.withOpacity(0.2)),
+        borderRadius: BorderRadius.circular(8.0),
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Icon(
+            ReflectlyIcons.addImage,
+            size: 36.0,
+            color: Colors.grey.withOpacity(0.5),
+          ),
+          SPACE_BIG,
+          AvenirText('ADD IMAGE',
+              style: Theme.of(context)
+                  .textTheme
+                  .body1
+                  .copyWith(color: Colors.grey.withOpacity(0.7))),
+        ],
+      ),
     );
   }
 }

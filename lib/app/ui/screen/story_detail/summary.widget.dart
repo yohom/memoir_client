@@ -18,20 +18,24 @@ class Summary extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(kSpaceBig),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          Column(
+    return Stack(
+      children: <Widget>[
+        Padding(
+          padding: const EdgeInsets.all(kSpaceBig),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               StoryDate(storyDate: story.storyDate),
               StoryTitle(title: story.title),
             ],
           ),
-          Mood(),
-        ],
-      ),
+        ),
+        Positioned(
+          right: -kSpaceBig,
+          child: Mood(),
+        ),
+      ],
     );
   }
 }

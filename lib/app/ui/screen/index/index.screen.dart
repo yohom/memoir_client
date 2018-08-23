@@ -5,8 +5,8 @@ import 'package:memoir/app/ui/widget/avatar.widget.dart';
 import 'package:memoir/framework/res.dart';
 import 'package:memoir/framework/ui.dart';
 
-class StoriesScreen extends StatelessWidget {
-  const StoriesScreen({Key key}) : super(key: key);
+class IndexScreen extends StatelessWidget {
+  const IndexScreen({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

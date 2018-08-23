@@ -8,12 +8,14 @@ class Operate extends StatelessWidget {
   final IconData iconData;
   final VoidCallback onTap;
   final EdgeInsets margin;
+  final int quarterTurns;
 
   const Operate({
     Key key,
     @required this.iconData,
     @required this.onTap,
     @required this.margin,
+    this.quarterTurns = 0,
   }) : super(key: key);
 
   factory Operate.forDesignTime() {
@@ -36,7 +38,7 @@ class Operate extends StatelessWidget {
         ),
         child: Padding(
           padding: const EdgeInsets.all(kSpaceNormal),
-          child: Icon(iconData),
+          child: RotatedBox(quarterTurns: quarterTurns, child: Icon(iconData)),
         ),
       ),
     );

@@ -4,10 +4,11 @@ import 'package:memoir/app/res/color.dart';
 import 'package:memoir/app/ui/screen/home/home.screen.dart';
 import 'package:memoir/framework/res.dart';
 import 'package:memoir/framework/ui.dart';
+import 'package:memoir/framework/utils/global.dart';
 
 void main() {
   MaterialPageRoute.debugEnableFadingRoutes = true;
-  debugPrintRebuildDirtyWidgets = true;
+//  debugPrintRebuildDirtyWidgets = true;
 
   runApp(MemoirApp());
 }
@@ -44,7 +45,12 @@ class MemoirApp extends StatelessWidget {
             valueIndicatorTextStyle: TextStyle(),
           ),
         ),
-        home: HomeScreen(),
+        home: Builder(
+          builder: (context) {
+            Global.init(context);
+            return HomeScreen();
+          },
+        ),
       ),
     );
   }

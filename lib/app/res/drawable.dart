@@ -28,6 +28,11 @@ class ReflectlyIcons {
   static const angry = IconData(0xe92e, fontFamily: 'ReflectlyIcons');
   static const anxious = IconData(0xe92f, fontFamily: 'ReflectlyIcons');
   static const down = IconData(0xe933, fontFamily: 'ReflectlyIcons');
+  static const more = IconData(0xe96c, fontFamily: 'ReflectlyIcons');
+  static const back = IconData(0xe904, fontFamily: 'ReflectlyIcons');
+  static const close = IconData(0xe91f, fontFamily: 'ReflectlyIcons');
+  static const delete = IconData(0xe9ad, fontFamily: 'ReflectlyIcons');
+  static const addImage = IconData(0xe988, fontFamily: 'ReflectlyIcons');
 }
 
 class Images {

@@ -10,8 +10,7 @@ import 'package:memoir/framework/utils.dart';
 Future<SnackBarClosedReason> showMessage(BuildContext context, String content,
     {bool isError = true}) {
   L.d('messge: $content');
-  return Scaffold
-      .of(context)
+  return Scaffold.of(context)
       .showSnackBar(SnackBar(
         content: Text(content),
         backgroundColor: isError ? Colors.red : Colors.blueGrey,
@@ -27,11 +26,4 @@ void showToast(String content, [bool isError = true]) {
     msg: content,
 //    bgcolor: isError ? '#FFFF0000' : '#FFFAFAFA',
   );
-}
-
-///
-/// 获取屏幕大小
-///
-Size getScreenSize(BuildContext context) {
-  return MediaQuery.of(context).size;
 }

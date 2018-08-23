@@ -6,8 +6,10 @@ import 'package:memoir/app/model/bean/story.dart';
 import 'package:memoir/app/ui/screen/story_detail/content.widget.dart';
 import 'package:memoir/app/ui/screen/story_detail/operate_group/operate_gourp.widget.dart';
 import 'package:memoir/app/ui/screen/story_detail/summary.widget.dart';
+import 'package:memoir/framework/res.dart';
 import 'package:memoir/framework/ui.dart';
 import 'package:memoir/framework/utils.dart';
+import 'package:memoir/framework/utils/global.dart';
 
 class StoryDetailScreen extends StatefulWidget {
   final Story story;
@@ -59,8 +61,12 @@ class _StoryDetailScreenState extends State<StoryDetailScreen> {
             ListView(
               controller: _controller,
               children: <Widget>[
-                SizedBox(height: getScreenSize(context).height * 0.7),
-                Summary(story: widget.story),
+                SizedBox(height: Global.kScreenHeight * 0.65),
+                SizedBox(
+                  height: Global.kScreenHeight * 0.18,
+                  child: Summary(story: widget.story),
+                ),
+                SPACE_BIG,
                 Content(story: widget.story),
               ],
             ),
@@ -75,7 +81,7 @@ class _StoryDetailScreenState extends State<StoryDetailScreen> {
   void dispose() {
     _controller.dispose();
 
-    bloc.showMoreOperate.clear();
+    bloc?.showMoreOperate?.clear();
     super.dispose();
   }
 }

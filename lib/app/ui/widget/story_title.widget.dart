@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:memoir/app/ui/widget/fonted_text.dart';
 
 ///
 /// story标题
@@ -13,9 +14,12 @@ class StoryTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
+    return QuicksandText(
       title,
-      style: Theme.of(context).textTheme.headline.copyWith(color: Colors.white),
+      style: Theme.of(context).textTheme.display1.copyWith(
+            color: Colors.white.withOpacity(0.8),
+            fontWeight: FontWeight.bold,
+          ),
     );
   }
 }

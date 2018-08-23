@@ -11,7 +11,7 @@ class HomeScreen extends StatelessWidget {
       body: Stack(
         alignment: AlignmentDirectional.bottomCenter,
         children: <Widget>[
-          StoriesScreen(),
+          IndexScreen(),
           BottomTabBar(),
         ],
       ),

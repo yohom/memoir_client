@@ -14,9 +14,11 @@ class BlocProvider extends StatefulWidget {
   @override
   _BlocProviderState createState() => _BlocProviderState();
 
-  static Bloc of(BuildContext context) {
-    return (context.inheritFromWidgetOfExactType(_BlocProvider)
-            as _BlocProvider)
+  static Bloc of(BuildContext context, [bool rebuild = true]) {
+    return (rebuild
+            ? context.inheritFromWidgetOfExactType(_BlocProvider)
+                as _BlocProvider
+            : context.ancestorWidgetOfExactType(_BlocProvider) as _BlocProvider)
         .bloc;
   }
 }

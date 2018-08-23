@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:memoir/app/res/dimens.dart';
 import 'package:memoir/app/res/drawable.dart';
+import 'package:memoir/app/ui/widget/calendar.widget.dart';
 import 'package:memoir/app/utils/devices.dart';
 import 'package:memoir/framework/res.dart';
 import 'package:memoir/framework/ui/dot_indicator.widget.dart';
@@ -53,7 +54,15 @@ class _BottomTabBarState extends State<BottomTabBar>
             IconButton(
               padding: EdgeInsets.all(kSpaceBig),
               icon: Icon(ReflectlyIcons.listen, color: Colors.black),
-              onPressed: () => _controller.animateTo(1),
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (_) {
+                    return Calendar();
+                  },
+                );
+                _controller.animateTo(1);
+              },
             ),
             IconButton(
               padding: EdgeInsets.all(kSpaceBig),

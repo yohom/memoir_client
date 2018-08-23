@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:memoir/app/ui/widget/widget.export.dart';
+import 'package:memoir/app/ui/widget/confirm.widget.dart';
 import 'package:memoir/framework/res/dimens.dart';
 import 'package:memoir/framework/ui.dart';
 import 'package:memoir/framework/utils.dart';
+import 'package:memoir/framework/utils/global.dart';
 
 class UpdateCover extends StatelessWidget {
   final String storyImage;
@@ -27,7 +28,7 @@ class UpdateCover extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  width: getScreenSize(context).width * 0.7,
+                  width: Global.kScreenWidth * 0.7,
                   height: 48.0,
                   child: RaisedButton(
                     elevation: kElevationBig,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:memoir/app/model/bean/story.dart';
+import 'package:memoir/app/res/drawable.dart';
 import 'package:memoir/app/ui/animation/fade_slide.transition.dart';
 import 'package:memoir/app/ui/route/dialog.route.dart';
 import 'package:memoir/app/ui/screen/edit_story/edit_story.screen.dart';
@@ -54,9 +55,10 @@ class _Exit extends StatelessWidget {
       originOffset: Offset(-100.0, 0.0),
       builder: (_, __) {
         return Operate(
-          iconData: Icons.arrow_downward,
+          iconData: ReflectlyIcons.back,
           onTap: () => Router.pop(context),
           margin: EdgeInsets.only(left: kSpaceBig, top: kSpaceBig),
+          quarterTurns: -1,
         );
       },
     );
@@ -81,7 +83,7 @@ class _More extends StatelessWidget {
           initialData: false,
           builder: (_, ss) {
             return Operate(
-              iconData: ss.data ? Icons.close : Icons.more_vert,
+              iconData: ss.data ? ReflectlyIcons.close : ReflectlyIcons.more,
               onTap: () {
                 bloc.showMoreOperate.add(!bloc.showMoreOperate.latest);
               },
@@ -89,6 +91,7 @@ class _More extends StatelessWidget {
                 right: kSpaceBig,
                 top: kSpaceBig,
               ),
+              quarterTurns: 1,
             );
           },
         );
