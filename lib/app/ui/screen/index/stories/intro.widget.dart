@@ -20,6 +20,7 @@ class Intro extends StatelessWidget {
           style: Theme.of(context).textTheme.display1.copyWith(
                 fontWeight: FontWeight.bold,
                 color: Colors.black,
+                fontSize: 36.0,
               ),
         ),
         SPACE_HUGE,
@@ -48,7 +49,7 @@ class _Divider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 80.0,
+      width: 72.0,
       height: 2.0,
       decoration: BoxDecoration(
         color: Colors.grey.withOpacity(0.6),

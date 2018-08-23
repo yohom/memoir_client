@@ -34,41 +34,61 @@ class NewStoryCard extends StatelessWidget {
           alignment: AlignmentDirectional.center,
           fit: StackFit.expand,
           children: <Widget>[
-            Hero(
-              tag: NEW_STORY_CARD_TO_EDIT_STORY,
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(kCardRadius),
-                  gradient: LinearGradient(
-                    colors: [kGradientStartColor, kGradientEndColor],
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                  ),
-                ),
-              ),
-            ),
+            _Background(),
             Images.newEntryBg,
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Icon(
-                  ReflectlyIcons.addNewStory,
-                  color: Colors.white,
-                  size: 100.0,
-                ),
-                SPACE_BIG,
-                AvenirText(
-                  'ADD NEW STORY',
-                  style: TextStyle(
-                    color: Colors.white.withOpacity(0.6),
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-              ],
-            ),
+            _Action(),
           ],
         ),
       ),
+    );
+  }
+}
+
+/// 背景
+class _Background extends StatelessWidget {
+  const _Background({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Hero(
+      tag: NEW_STORY_CARD_TO_EDIT_STORY,
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(kCardRadius),
+          gradient: LinearGradient(
+            colors: [kGradientStartColor, kGradientEndColor],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+/// 新增story的图标和文字
+class _Action extends StatelessWidget {
+  const _Action({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Icon(
+          ReflectlyIcons.addNewStory,
+          color: Colors.white,
+          size: 100.0,
+        ),
+        SPACE_BIG,
+        AvenirText(
+          'ADD NEW STORY',
+          style: TextStyle(
+            color: Colors.white.withOpacity(0.6),
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+      ],
     );
   }
 }

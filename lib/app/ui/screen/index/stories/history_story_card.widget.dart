@@ -44,8 +44,9 @@ class HistoryStoryCard extends StatelessWidget {
             Hero(
               tag: story.title,
               child: ClipRRect(
-                  borderRadius: BorderRadius.circular(kCardRadius),
-                  child: ImageWidget(imageUrl: story.storyImage)),
+                borderRadius: BorderRadius.circular(kCardRadius),
+                child: ImageWidget(imageUrl: story.storyImage),
+              ),
             ),
             Positioned(
               left: 24.0,
