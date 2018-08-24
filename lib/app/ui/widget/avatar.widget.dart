@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:memoir/app/ui/animation/show_up.transition.dart';
-import 'package:memoir/framework/ui/shadow_box.widget.dart';
+import 'package:memoir/framework/ui/shadowed_box.widget.dart';
 
 class Avatar extends StatelessWidget {
   final double width;
@@ -15,7 +15,7 @@ class Avatar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ShowUpTransition(
-      child: ShadowBox(
+      child: ShadowedBox(
         shape: BoxShape.circle,
         width: width,
         height: height,

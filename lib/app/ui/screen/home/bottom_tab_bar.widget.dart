@@ -3,7 +3,7 @@ import 'package:memoir/app/res/drawable.dart';
 import 'package:memoir/app/ui/widget/calendar.widget.dart';
 import 'package:memoir/framework/res.dart';
 import 'package:memoir/framework/ui/dot_indicator.widget.dart';
-import 'package:memoir/framework/ui/shadow_box.widget.dart';
+import 'package:memoir/framework/ui/shadowed_box.widget.dart';
 import 'package:memoir/framework/utils/global.dart';
 
 class BottomTabBar extends StatefulWidget {
@@ -29,7 +29,7 @@ class _BottomTabBarState extends State<BottomTabBar>
 
   @override
   Widget build(BuildContext context) {
-    return ShadowBox(
+    return ShadowedBox(
       blurRadius: 12.0,
       spreadRadius: -4.0,
       borderRadius: BorderRadius.vertical(

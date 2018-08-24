@@ -7,7 +7,7 @@ import 'package:memoir/app/ui/screen/story_detail/story_detail.screen.dart';
 import 'package:memoir/app/ui/widget/mood.widget.dart';
 import 'package:memoir/framework/res.dart';
 import 'package:memoir/framework/ui.dart';
-import 'package:memoir/framework/ui/shadow_box.widget.dart';
+import 'package:memoir/framework/ui/shadowed_box.widget.dart';
 import 'package:memoir/framework/utils.dart';
 
 const kCardRadius = 12.0;
@@ -29,7 +29,7 @@ class HistoryStoryCard extends StatelessWidget {
       onTap: () {
         Router.navigate(context, StoryDetailScreen(story: story));
       },
-      child: ShadowBox(
+      child: ShadowedBox(
         borderRadius: BorderRadius.circular(kCardRadius),
         spreadRadius: -16.0,
         blurRadius: 24.0,

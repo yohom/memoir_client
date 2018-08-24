@@ -6,7 +6,7 @@ import 'package:memoir/app/res/drawable.dart';
 import 'package:memoir/app/ui/screen/edit_story/edit_story.screen.dart';
 import 'package:memoir/app/ui/widget/fonted_text.dart';
 import 'package:memoir/framework/res.dart';
-import 'package:memoir/framework/ui/shadow_box.widget.dart';
+import 'package:memoir/framework/ui/shadowed_box.widget.dart';
 import 'package:memoir/framework/utils.dart';
 
 const kCardRadius = 12.0;
@@ -20,7 +20,7 @@ class NewStoryCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => Router.navigate(context, EditStoryScreen()),
-      child: ShadowBox(
+      child: ShadowedBox(
         borderRadius: BorderRadius.circular(kCardRadius),
         spreadRadius: -16.0,
         blurRadius: 24.0,
