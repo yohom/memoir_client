@@ -1,4 +1,4 @@
-import 'package:memoir/framework/utils/time.dart';
+import 'package:memoir/framework/utils/times.dart';
 
 class Story {
   int id;

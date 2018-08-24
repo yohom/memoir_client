@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:memoir/app/ui/screen/edit_story/content/elaborate.widget.dart';
-import 'package:memoir/app/ui/screen/edit_story/content/greeting.widget.dart';
+import 'package:memoir/app/ui/screen/edit_story/content/story_date/story_date.widget.dart';
 import 'package:memoir/app/ui/screen/edit_story/content/how_you_feel.widget.dart';
 import 'package:memoir/app/ui/screen/edit_story/content/select_mood.widget.dart';
 import 'package:memoir/app/ui/screen/edit_story/content/what_made_today.widget.dart';
@@ -31,7 +31,7 @@ class Content extends StatelessWidget {
       controller: _controller,
       scrollDirection: Axis.vertical,
       children: <Widget>[
-        Greeting(),
+        StoryDate(),
         SelectMood(),
         WhatMadeToday(),
         Elaborate(),
