@@ -4,6 +4,7 @@ import 'package:memoir/app/ui/animation/show_up.transition.dart';
 import 'package:memoir/app/ui/widget/fonted_text.dart';
 import 'package:memoir/framework/res.dart';
 import 'package:memoir/framework/ui.dart';
+import 'package:memoir/framework/utils/time.dart';
 
 ///
 /// 内容
@@ -26,7 +27,7 @@ class Greeting extends StatelessWidget {
             delay: Duration(milliseconds: 300),
             builder: (context, controller) {
               return QuicksandText(
-                'Good morning yohom, ready to create a new story?',
+                'Good ${Times.period()} yohom, ready to create a new story?',
                 textAlign: TextAlign.center,
                 style: Theme.of(context)
                     .textTheme

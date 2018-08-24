@@ -1,4 +1,4 @@
-import 'package:memoir/framework/utils/misc.dart';
+import 'package:memoir/framework/utils/time.dart';
 
 class Story {
   int id;
@@ -11,7 +11,7 @@ class Story {
   List<String> get formatStoryDate {
     final spiltDate = storyDate.split('-');
     final numberedMonth = spiltDate[1];
-    final namedMonth = numberMonth2NamedMonth(numberedMonth);
+    final namedMonth = Times.numberMonth2NamedMonth(numberedMonth);
     return List()..add(spiltDate[2])..add(namedMonth)..add(spiltDate[0]);
   }
 

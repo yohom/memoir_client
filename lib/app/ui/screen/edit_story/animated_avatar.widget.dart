@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:memoir/app/ui/animation/show_up.transition.dart';
 import 'package:memoir/app/ui/screen/edit_story/edit_story.screen.dart';
 import 'package:memoir/app/ui/widget/avatar.widget.dart';
 import 'package:memoir/framework/res.dart';
@@ -26,7 +27,7 @@ class AnimatedAvatar extends StatelessWidget {
               ? AlignmentDirectional.topCenter
               : AlignmentDirectional.topStart,
           transform: Matrix4.identity()..scale(isFirstPage ? 1.0 : 0.7),
-          child: Avatar(width: 80.0, height: 80.0),
+          child: ShowUpTransition(child: Avatar(width: 80.0, height: 80.0)),
         );
       },
     );

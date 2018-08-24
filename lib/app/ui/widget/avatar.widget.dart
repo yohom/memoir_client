@@ -14,17 +14,16 @@ class Avatar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ShowUpTransition(
-      child: ShadowedBox(
-        shape: BoxShape.circle,
-        width: width,
-        height: height,
-        shadowOffset: Offset(0.0, 12.0),
-        spreadRadius: -8.0,
-        blurRadius: 16.0,
-        child: CircleAvatar(
-          backgroundImage: AssetImage('assets/images/reflectly-face.gif'),
-        ),
+    return ShadowedBox(
+      shape: BoxShape.circle,
+      width: width,
+      height: height,
+      shadowColor: Colors.black,
+      shadowOffset: Offset(0.0, 12.0),
+      spreadRadius: -12.0,
+      blurRadius: 24.0,
+      child: CircleAvatar(
+        backgroundImage: AssetImage('assets/images/reflectly-face.gif'),
       ),
     );
   }

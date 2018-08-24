@@ -36,8 +36,8 @@ class HistoryStoryCard extends StatelessWidget {
         shadowOffset: Offset(0.0, 24.0),
         margin: EdgeInsets.only(
           bottom: kStoriesBottomPadding,
-          left: kSpaceSmall,
-          right: kSpaceSmall,
+          left: kSpaceNormal,
+          right: kSpaceNormal,
         ),
         child: Stack(
           fit: StackFit.expand,
