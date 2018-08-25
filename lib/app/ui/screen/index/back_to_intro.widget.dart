@@ -30,7 +30,7 @@ class BackToIndex extends StatelessWidget {
               0.0,
             ),
             child: IconButton(
-              icon: Icon(ReflectlyIcons.back1, color: Colors.grey),
+              icon: Icon(RIcons.back1, color: Colors.grey),
               onPressed: () {
                 bloc.pageChange.add(PageChange(0, triggeredByBack: true));
               },

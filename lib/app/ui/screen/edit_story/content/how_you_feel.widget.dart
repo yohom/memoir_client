@@ -1,21 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:memoir/app/res/drawable.dart';
+import 'package:memoir/app/ui/screen/edit_story/edit_story.screen.dart';
 import 'package:memoir/app/ui/widget/fonted_text.dart';
 import 'package:memoir/app/ui/widget/question.widget.dart';
 import 'package:memoir/app/ui/widget/step_indicator.widget.dart';
 import 'package:memoir/framework/res.dart';
 
-final _iconDataList = [
-  {ReflectlyIcons.happy: 'Happy'},
-  {ReflectlyIcons.blessed: 'Blessed'},
-  {ReflectlyIcons.lucky: 'Lucky'},
-  {ReflectlyIcons.good: 'Good'},
-  {ReflectlyIcons.confused: 'Confused'},
-  {ReflectlyIcons.stressed: 'Stressed'},
-  {ReflectlyIcons.angry: 'Angry'},
-  {ReflectlyIcons.anxious: 'Anxious'},
-  {ReflectlyIcons.down: 'Down'},
+final kIconDataList = [
+  {RIcons.happy: 'Happy'},
+  {RIcons.blessed: 'Blessed'},
+  {RIcons.lucky: 'Lucky'},
+  {RIcons.good: 'Good'},
+  {RIcons.confused: 'Confused'},
+  {RIcons.stressed: 'Stressed'},
+  {RIcons.angry: 'Angry'},
+  {RIcons.anxious: 'Anxious'},
+  {RIcons.down: 'Down'},
 ];
+const kQuestion = 'How did you fell throughout the day?';
 
 class HowYouFeel extends StatelessWidget {
   @override
@@ -23,10 +25,10 @@ class HowYouFeel extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: <Widget>[
-        SizedBox(height: 100.0),
-        Question(question: 'How did you fell throughout the day?'),
+        kTopMargin,
+        Question(kQuestion),
         Flexible(child: _Feel()),
-        StepIndicator(goToPage: 5, returnToPage: 3),
+        SPACE_GIANT,
       ],
     );
   }
@@ -46,7 +48,7 @@ class _FeelState extends State<_Feel> {
   Widget build(BuildContext context) {
     return PageView.builder(
       controller: _controller,
-      itemCount: _iconDataList.length,
+      itemCount: kIconDataList.length,
       itemBuilder: (context, index) {
         return AnimatedBuilder(
           animation: _controller,
@@ -72,13 +74,13 @@ class _FeelState extends State<_Feel> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Icon(
-                    _iconDataList[index].keys.toList()[0],
+                    kIconDataList[index].keys.toList()[0],
                     size: 80.0,
                     color: Colors.white.withOpacity(iconFactor),
                   ),
                   SPACE_BIG,
                   QuicksandText(
-                    _iconDataList[index].values.toList()[0],
+                    kIconDataList[index].values.toList()[0],
                     style: TextStyle(
                       color: Colors.white.withOpacity(labelFactor),
                     ),

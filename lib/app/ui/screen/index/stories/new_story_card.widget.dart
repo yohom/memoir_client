@@ -77,7 +77,7 @@ class _Action extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         Icon(
-          ReflectlyIcons.addNewStory,
+          RIcons.addNewStory,
           color: Colors.white,
           size: 100.0,
         ),

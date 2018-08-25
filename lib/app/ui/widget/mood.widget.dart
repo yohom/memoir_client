@@ -15,7 +15,7 @@ class Mood extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Icon(
-      ReflectlyIcons.happy,
+      RIcons.happy,
       color: Colors.white.withOpacity(0.5),
       size: size,
     );

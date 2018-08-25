@@ -2,15 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:memoir/framework/res.dart';
 import 'package:memoir/framework/ui.dart';
 
-class StepIndicator extends StatelessWidget {
-  final int goToPage;
-  final int returnToPage;
+const kIndicatorSize = 32.0;
 
-  const StepIndicator({
-    Key key,
-    @required this.goToPage,
-    @required this.returnToPage,
-  }) : super(key: key);
+class StepIndicator extends StatelessWidget {
+  const StepIndicator({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,14 +18,16 @@ class StepIndicator extends StatelessWidget {
           child: Column(
             children: <Widget>[
               IconButton(
-                icon: Icon(Icons.keyboard_arrow_up),
+                icon: Icon(Icons.keyboard_arrow_up, size: kIndicatorSize),
                 color: Colors.white.withOpacity(0.4),
-                onPressed: () => bloc.scrollPage.add(returnToPage),
+                onPressed: () =>
+                    bloc.scrollPage.add(bloc.scrollPage.latest - 1),
               ),
               IconButton(
-                icon: Icon(Icons.keyboard_arrow_down),
+                icon: Icon(Icons.keyboard_arrow_down, size: kIndicatorSize),
                 color: Colors.white,
-                onPressed: () => bloc.scrollPage.add(goToPage),
+                onPressed: () =>
+                    bloc.scrollPage.add(bloc.scrollPage.latest + 1),
               ),
             ],
           ),

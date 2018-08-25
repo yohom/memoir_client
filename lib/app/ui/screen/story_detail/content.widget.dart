@@ -4,6 +4,7 @@ import 'package:memoir/app/res/drawable.dart';
 import 'package:memoir/app/ui/animation/fade_slide.transition.dart';
 import 'package:memoir/app/ui/widget/fonted_text.dart';
 import 'package:memoir/framework/res.dart';
+import 'package:memoir/framework/ui/shadowed_box.widget.dart';
 
 ///
 /// 内容
@@ -27,11 +28,9 @@ class Content extends StatelessWidget {
       originOffset: Offset(0.0, 200.0),
       delay: Duration(microseconds: 600),
       builder: (_, __) {
-        return Card(
-          elevation: kElevationNormal,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(32.0),
-          ),
+        return ShadowedBox(
+          spreadRadius: -8.0,
+          borderRadius: BorderRadius.circular(24.0),
           margin: EdgeInsets.all(kSpaceZero),
           child: Padding(
             padding: const EdgeInsets.symmetric(
@@ -108,7 +107,7 @@ class _AddImage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Icon(
-            ReflectlyIcons.addImage,
+            RIcons.addImage,
             size: 36.0,
             color: Colors.grey.withOpacity(0.5),
           ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ReflectlyIcons {
+/// Reflectly的Icon
+class RIcons {
   static const reallyTerrible = IconData(0xe933, fontFamily: 'ReflectlyIcons');
   static const somewhatBad = IconData(0xe930, fontFamily: 'ReflectlyIcons');
   static const completelyOk = IconData(0xe932, fontFamily: 'ReflectlyIcons');

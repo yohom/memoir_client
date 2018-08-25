@@ -5,7 +5,7 @@ import 'package:memoir/framework/res.dart';
 class Question extends StatelessWidget {
   final String question;
 
-  const Question({Key key, @required this.question}) : super(key: key);
+  const Question(this.question, {Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -35,6 +35,20 @@ class StoryBloc {
   final scrollPage = Event<int>(seedValue: 0);
 
   ///
+  /// how was your day
+  ///
+  final howWasYourDay = Event<double>(seedValue: 0.0);
+
+  ///
+  /// 选中的make today thing
+  ///
+  final whatMadeToday = Event<String>(seedValue: '');
+
+  StoryBloc() {
+    whatMadeToday.listen((_) => scrollPage.add(scrollPage.latest + 1));
+  }
+
+  ///
   /// 获取story列表
   ///
   Future<List<Story>> performFetchStoryList() => Api.fetchStoryList({});
