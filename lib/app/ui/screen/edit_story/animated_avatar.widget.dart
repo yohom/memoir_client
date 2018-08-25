@@ -15,18 +15,19 @@ class AnimatedAvatar extends StatelessWidget {
       stream: bloc.scrollPage.stream,
       initialData: 0,
       builder: (_, ss) {
-        final isFirstPage = ss.data == 0;
+        // 是否C位
+        final isCPosition = ss.data == 0 || ss.data == 5;
         return AnimatedContainer(
           duration: kPageChangeDuration,
           curve: Curves.ease,
           margin: EdgeInsets.only(
-            top: isFirstPage ? kSpaceGiant : kSpaceHuge,
-            left: isFirstPage ? 0.0 : kSpaceHuge,
+            top: isCPosition ? kSpaceGiant : kSpaceHuge,
+            left: isCPosition ? 0.0 : kSpaceHuge,
           ),
-          alignment: isFirstPage
+          alignment: isCPosition
               ? AlignmentDirectional.topCenter
               : AlignmentDirectional.topStart,
-          transform: Matrix4.identity()..scale(isFirstPage ? 1.0 : 0.7),
+          transform: Matrix4.identity()..scale(isCPosition ? 1.0 : 0.7),
           child: ShowUpTransition(child: Avatar(width: 80.0, height: 80.0)),
         );
       },

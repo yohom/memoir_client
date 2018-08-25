@@ -11,9 +11,7 @@ import 'package:memoir/framework/utils/times.dart';
 /// 日期
 ///
 class StoryDate extends StatelessWidget {
-  const StoryDate({
-    Key key,
-  }) : super(key: key);
+  const StoryDate({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

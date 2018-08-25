@@ -32,7 +32,7 @@ class EditStoryScreen extends StatelessWidget {
               return AnimatedPositioned(
                 duration: Duration(milliseconds: 700),
                 curve: Curves.ease,
-                right: ss.data == 0 ? -64.0 : kSpaceZero,
+                right: ss.data == 0 || ss.data == 5 ? -64.0 : kSpaceZero,
                 bottom: kSpaceNormal,
                 child: StepIndicator(),
               );
